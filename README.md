@@ -349,9 +349,17 @@ present. Inside, bare `<Operation Class="...PatchOperationDistributeCost">` ops
 (no `FindMod`/`Sequence` needed - the folder gate handles presence), with
 defNames OR-joined per (metal, %, factor), just like EMM's hand-written files.
 
-To cover another mod, add a `ModPatches/1.6/<Mod>/Patches/` folder and one
-`IfModActive="<packageId>"` line in `LoadFolders.xml`. `tools/assignments.tsv`
-and `tools/adversary-review.md` record which building got which metal, and why.
+Each folder's patch file has a **unique** name (`<Mod>_Patch_Buildings.xml`), the
+way EMM names every file (`Odyssey_Patch_Buildings.xml`, `VGE_Patch_Buildings.xml`,
+...). This matters: RimWorld's `LoadFolders` overrides files by their relative path
+(later active folder wins), so a shared `Patches/Buildings.xml` across folders would
+collapse to just one - every other mod's coverage silently shadowed once two or more
+covered mods are active.
+
+To cover another mod, add `ModPatches/1.6/<Mod>/Patches/<Mod>_Patch_Buildings.xml`
+(unique filename, per above) and one `IfModActive="<packageId>"` line in
+`LoadFolders.xml`. `tools/assignments.tsv` and `tools/adversary-review.md` record
+which building got which metal, and why.
 
 ## Requires
 
