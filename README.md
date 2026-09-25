@@ -25,39 +25,286 @@ defs like `ShipHeatsink`.
 
 ## Patched mods
 
-128 buildings across 30 mods (building count in parens). Each has its own
-`IfModActive`-gated folder, so only the mods you actually run are touched:
+128 buildings across 30 mods. Each mod has its own `IfModActive`-gated folder, so only
+the mods you actually run are touched. Expand for the exact defs and metals:
 
-- Combat Extended Armory (24)
-- Dubs Bad Hygiene (17)
-- Alpha Biomes (11)
-- Vanilla Chemfuel Expanded (8)
-- Vanilla Nutrient Paste Expanded (8)
-- Dubs Rimatomics (6)
-- Vanilla Furniture Expanded - Production (6)
-- RimFridge: Now with Shelves! (5)
-- Vanilla Quests Expanded - The Generator (5)
-- Expanded Prosthetics and Organ Engineering - Forked (4)
-- Vanilla Cooking Expanded (4)
-- RimThunder - Core (3)
-- Vanilla Brewing Expanded (3)
-- \[JDS\] Simple Storage - Refrigeration (3)
-- Alpha Animals (2)
-- Centralized Climate Control (Continued) (2)
-- Hospitality: Vending machines (2)
-- Vanilla Furniture Expanded - Medical Module (2)
-- Vanilla Genetics Expanded (2)
-- Combat Extended Guns (1)
-- LWM's Deep Storage (1)
-- Vanilla Brewing Expanded - Coffees and Teas (1)
-- Vanilla Cooking Expanded - Haute (1)
-- Vanilla Cooking Expanded - Stews (1)
-- Vanilla Cooking Expanded - Sushi (1)
-- Vanilla Factions Expanded - Settlers (1)
-- Vanilla Furniture Expanded (1)
-- Vanilla Plants Expanded - More Plants (1)
-- Vanilla Quests Expanded - Drone Factory (1)
-- Warehouse Storage (1)
+<details><summary>Combat Extended Armory (24)</summary>
+
+- `CE_Turret_12PounderBombard` — 12-pounder bombard → Titanium
+- `CE_Turret_GatlingGun` — Gatling gun → Titanium
+- `CE_Turret_M1919Browning` — M1919 machine gun → Titanium
+- `CE_Turret_M2HB` — M2 Browning machine gun → Titanium
+- `CE_Turret_MkNineteenGL` — Mk 19 grenade launcher → Titanium
+- `CE_Turret_OrganGun` — organ gun → Titanium
+- `CE_Turret_PKM` — PKM machine gun → Titanium
+- `CE_Turret_PortableMortar` — 60mm portable mortar → Titanium
+- `CE_Turret_SPGNine` — SPG-9 recoilless gun → Titanium
+- `CE_Turret_ShotgunTurret` — shotgun auto-turret → Titanium
+- `CE_Turret_TwelvePounder` — 12-pounder cannon → Titanium
+- `CE_Turret_Vickers` — Vickers machine gun → Titanium
+- `Turret_12PounderBombard` — 12-pounder bombard → Titanium
+- `Turret_GatlingGun` — Gatling gun → Titanium
+- `Turret_M1919Browning` — M1919 machine gun → Titanium
+- `Turret_M2HB` — M2 Browning machine gun → Titanium
+- `Turret_MkNineteenGL` — Mk 19 grenade launcher → Titanium
+- `Turret_OrganGun` — organ gun → Titanium
+- `Turret_PKM` — PKM machine gun → Titanium
+- `Turret_PortableMortar` — 60mm portable mortar → Titanium
+- `Turret_SPGNine` — SPG-9 recoilless gun → Titanium
+- `Turret_ShotgunTurret` — shotgun auto-turret → Titanium
+- `Turret_TwelvePounder` — 12-pounder cannon → Titanium
+- `Turret_Vickers` — Vickers machine gun → Titanium
+
+</details>
+
+<details><summary>Dubs Bad Hygiene (17)</summary>
+
+- `AirConOutdoorUnit` — Air-Con Outdoor Unit → Copper
+- `AirconIndoorUnit` — air-con indoor unit → Copper
+- `BiosolidsComposter` — Biosolids Composter → StainlessSteel
+- `CryogenicExtractionNode` — cryogenic extraction node → StainlessSteel
+- `DBHSaunaHeaterElec` — Electric Sauna Heater → Copper
+- `FireSprinkler` — Fire Sprinkler → StainlessSteel
+- `FreezerUnit` — Walk-in freezer unit → Copper, StainlessSteel
+- `GeothermHeater` — Geothermal heater → Copper
+- `HotWaterTank` — hot water tank → StainlessSteel
+- `IrrigationSprinkler` — Irrigation Sprinkler → StainlessSteel
+- `KitchenSink` — Kitchen Sink → StainlessSteel
+- `RadiatorLarge` — large radiator → Copper
+- `RadiatorStuffed` — radiator → Copper
+- `RadiatorTowelRail` — Towel Rail → Copper
+- `SolarHeater` — solar heater → Copper
+- `WashingMachine` — Washing Machine → StainlessSteel
+- `plumbingValve` — plumbing valve → StainlessSteel
+
+</details>
+
+<details><summary>Alpha Biomes (11)</summary>
+
+- `AB_BoneDistillery` — bone drill → Titanium
+- `AB_CoreSampleDrill` — core sample drill → Titanium
+- `AB_MagmaThermalPlant` — magma-thermal generator → Copper
+- `AB_MagmaThermalPlant_Advanced` — advanced magma-thermal generator → Copper
+- `AB_PropaneHeater` — propane heater → Copper
+- `AB_PropaneSmelter` — propane smelter → Titanium
+- `AB_PropaneStove` — propane stove → StainlessSteel
+- `AB_PropaneTableMachining` — propane machining table → Titanium
+- `AB_PropaneTap` — propane tap → StainlessSteel
+- `AB_SlimeCompressor` — slime compressor → Titanium
+- `AB_Turret_Propane` — propane turret → Titanium
+
+</details>
+
+<details><summary>Vanilla Chemfuel Expanded (8)</summary>
+
+- `PS_DeepchemRefinery` — deepchem refinery → Titanium
+- `VCHE_ChemfuelTap` — chemfuel tap → StainlessSteel
+- `VCHE_DeepchemDrain` — deepchem drain → StainlessSteel
+- `VCHE_DeepchemPipe` — deepchem pipe → StainlessSteel
+- `VCHE_DeepchemPumpjack` — deepchem pumpjack → Titanium
+- `VCHE_DeepchemTap` — deepchem tap → StainlessSteel
+- `VCHE_DeepchemValve` — deepchem valve → StainlessSteel
+- `VCHE_UndergroundDeepchemPipe` — subterranean deepchem pipe → StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Nutrient Paste Expanded (8)</summary>
+
+- `VNPE_NutrientPasteDripper` — nutrient paste dripper → StainlessSteel
+- `VNPE_NutrientPasteFeeder` — nutrient paste feeder → StainlessSteel
+- `VNPE_NutrientPasteGrinder` — nutrient paste grinder → StainlessSteel
+- `VNPE_NutrientPastePipe` — nutrient paste pipe → StainlessSteel
+- `VNPE_NutrientPasteTap` — nutrient paste tap → StainlessSteel
+- `VNPE_NutrientPasteValve` — nutrient paste valve → StainlessSteel
+- `VNPE_NutrientPasteVat` — nutrient paste vat → StainlessSteel
+- `VNPE_UndergroundNutrientPastePipe` — subterranean nutrient paste pipe → StainlessSteel
+
+</details>
+
+<details><summary>Dubs Rimatomics (6)</summary>
+
+- `CoolingRadiator` — Radiator → Copper
+- `DU_Blastdoor` — DU Blast door → Titanium
+- `PPCRailgun` — Punisher → Titanium
+- `PlutoniumProcessor` — Plutonium Processor → Lead, Titanium
+- `RadiationShielding` — Reinforced DU Wall → Lead, Titanium
+- `TableRimatomicsMachining` — Rimatomics machining table → Titanium
+
+</details>
+
+<details><summary>Vanilla Furniture Expanded - Production (6)</summary>
+
+- `VFE_ComponentFabricationBench` — assembly bench → Titanium
+- `VFE_FueledSmelter` — fueled smelter → Titanium
+- `VFE_KitchenSinkCabinet` — kitchen sink cabinet → StainlessSteel
+- `VFE_TableButcherElectric` — electric butcher → StainlessSteel
+- `VFE_TableMachiningLarge` — large machining table → Titanium
+- `VFE_TableStoveLarge` — large stove → StainlessSteel
+
+</details>
+
+<details><summary>RimFridge: Now with Shelves! (5)</summary>
+
+- `RimFridge_QuadRefrigerator` — Quad Refrigerator → Copper, StainlessSteel
+- `RimFridge_Refrigerator` — Dual Refrigerator → Copper, StainlessSteel
+- `RimFridge_SingleRefrigerator` — Single Refrigerator → Copper, StainlessSteel
+- `RimFridge_SingleWallRefrigerator` — Wall Single Refrigerator → Copper, StainlessSteel
+- `RimFridge_WallRefrigerator` — Wall Dual Refrigerator → Copper, StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Quests Expanded - The Generator (5)</summary>
+
+- `VQE_AncientGeothermalGenetron` — ancient geothermal ARC → Copper
+- `VQE_Genetron_Geothermal` — geothermal ARC → Copper
+- `VQE_Genetron_Nuclear` — nuclear ARC → Copper, Lead, Titanium
+- `VQE_Genetron_SteamPowered` — steam-powered ARC → Copper, StainlessSteel
+- `VQE_Genetron_ThermalVent` — thermal-vent ARC → Copper
+
+</details>
+
+<details><summary>Expanded Prosthetics and Organ Engineering - Forked (4)</summary>
+
+- `TableBasicProsthetic` — basic prosthetics workbench → StainlessSteel
+- `TableBionics` — bionics workbench → StainlessSteel
+- `TableOrgans` — tissue printer → StainlessSteel
+- `TableSimpleProsthetic` — prosthetic workbench → StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Cooking Expanded (4)</summary>
+
+- `VCE_CanningMachine` — canning machine → StainlessSteel
+- `VCE_CheesePress` — cheese press → StainlessSteel
+- `VCE_ElectricPot` — electric pot → StainlessSteel
+- `VCE_Grill` — grill → StainlessSteel
+
+</details>
+
+<details><summary>RimThunder - Core (3)</summary>
+
+- `RTC_EngineHanger` — engine hanger → Titanium
+- `RT_AssemblyBench` — assembly platfrom → Titanium
+- `RT_AssemblyCrane` — assembly bridge crane → Titanium
+
+</details>
+
+<details><summary>Vanilla Brewing Expanded (3)</summary>
+
+- `VBE_AmbrandyDistillery` — ambrandy distillery → Copper, StainlessSteel
+- `VBE_GinStill` — gin still → Copper, StainlessSteel
+- `VBE_SodaFountain` — soda fountain → StainlessSteel
+
+</details>
+
+<details><summary>[1.5&Adaptive Storage][JDS] Simple Storage - Refrigeration (3)</summary>
+
+- `JDS_IceBox` — Ice Box → Copper, StainlessSteel
+- `JDS_RefrigeratedBoxTrucks` — Refrigerated Box Trucks → Copper, StainlessSteel
+- `JDS_Refrigerator` — Refrigerator → Copper, StainlessSteel
+
+</details>
+
+<details><summary>Alpha Animals (2)</summary>
+
+- `AA_HexagelCoreReactor` — hexagel core reactor → Titanium
+- `VEF_AdvancedAnimalImplantsTable` — advanced animal prosthetics table → StainlessSteel
+
+</details>
+
+<details><summary>Centralized Climate Control (Continued) (2)</summary>
+
+- `AirThermal` — airThermal → Copper
+- `LargeAirThermal` — largeAirThermal → Copper
+
+</details>
+
+<details><summary>Hospitality: Vending machines (2)</summary>
+
+- `OwlFridgeVendingMachine` — fridge vending machine → Copper, StainlessSteel
+- `RimFridgeVendingMachine` — fridge vending machine → Copper, StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Furniture Expanded - Medical Module (2)</summary>
+
+- `Facility_VitalsCentre` — vitals centre → StainlessSteel
+- `VFEM_Wall_Sterile` — sterile wall → StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Genetics Expanded (2)</summary>
+
+- `GR_GeneticExtractionTable` — genome extractor table → StainlessSteel
+- `GR_NutrientVat` — nutrient vat → StainlessSteel
+
+</details>
+
+<details><summary>Combat Extended Guns (1)</summary>
+
+- `CE_Artillery_Howitzer` — 105mm howitzer → Titanium
+
+</details>
+
+<details><summary>LWM's Deep Storage (1)</summary>
+
+- `LWM_DS_RimFridge_Refrigerator` — Deep Refrigerator → Copper, StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Brewing Expanded - Coffees and Teas (1)</summary>
+
+- `VBE_EspressoMachineBuilding` — espresso machine → Copper, StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Cooking Expanded - Haute (1)</summary>
+
+- `VCE_ElectricHauteSection` — electric haute section → StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Cooking Expanded - Stews (1)</summary>
+
+- `VCE_StewPot` — stew pot → StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Cooking Expanded - Sushi (1)</summary>
+
+- `VCE_SoyFermenter` — soy sauce fermenter → StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Factions Expanded - Settlers (1)</summary>
+
+- `ChemBoiler` — chemboiler → Copper
+
+</details>
+
+<details><summary>Vanilla Furniture Expanded (1)</summary>
+
+- `AirConditioningUnit` — air conditioning unit → Copper
+
+</details>
+
+<details><summary>Vanilla Plants Expanded - More Plants (1)</summary>
+
+- `VCE_VegMilkExtractor` — vegetable milk extractor → StainlessSteel
+
+</details>
+
+<details><summary>Vanilla Quests Expanded - Drone Factory (1)</summary>
+
+- `VFEFactory_DroneAutofactory` — drone autofactory → Titanium
+
+</details>
+
+<details><summary>Warehouse Storage (1)</summary>
+
+- `Vin_FR` — Roller Fridge → Copper, StainlessSteel
+
+</details>
 
 ## Why Silicon / Germanium are omitted
 
