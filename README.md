@@ -50,17 +50,26 @@ invented:
   yield vs Steel/Iron, so a copper building costs roughly the same number of cells
   mined as the Steel original despite the larger unit count.
 
-## Regenerating
+## Structure & regenerating
 
-`tools/assignments.tsv` is the curated (adversary-vetted) building→metal list.
-`tools/generate.py` turns it into `Patches/Buildings_MoreCoverage.xml`:
+Laid out exactly like EMM's own `ModPatches/` — one folder per patched mod under
+`ModPatches/1.6/<Mod>/Patches/`, each gated in `LoadFolders.xml` by
+`IfModActive="<packageId>"`, so a mod's patches load only when that mod is
+present. Inside, bare `<Operation Class="…PatchOperationDistributeCost">` ops
+(no `FindMod`/`Sequence` needed — the folder gate handles presence), with
+defNames OR-joined per (metal, %, factor), just like EMM's hand-written files.
+
+`tools/generate.py` regenerates the whole `ModPatches/` tree **and**
+`LoadFolders.xml` from two owner-editable tables:
+
+- `tools/assignments.tsv` — the curated (adversary-vetted) building→metal list
+- `tools/mods.tsv` — `modName → packageId → folder`
 
 ```
 python3 tools/generate.py
 ```
 
-Edit `assignments.tsv` (add/remove rows) or the parameters at the top of
-`generate.py`, then re-run to rebuild the patch.
+Edit either table (or the parameters at the top of `generate.py`), then re-run.
 
 ## Requires
 

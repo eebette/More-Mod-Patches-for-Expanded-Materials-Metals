@@ -1,99 +1,124 @@
 #!/usr/bin/env python3
 """
-Generate Patches/Buildings_MoreCoverage.xml from tools/assignments.tsv.
+Generate the mod's patches, mirroring Expanded Materials - Metals' own layout:
 
-Emits one ArgonicCore PatchOperationDistributeCost per (building, metal), using
-Expanded Materials - Metals' own Steel-base parameters, so the ops are shaped
-exactly like EMM's own patches.
+    ModPatches/1.6/<Folder>/Patches/Buildings.xml     (one folder per patched mod)
+    LoadFolders.xml                                   (each folder gated IfModActive)
 
-EMM-derived Steel-base parameters (percentage / extraCostFactor), read off EMM's
-DistributeCost ops that source each metal from Steel (Silver for StainlessSteel,
-which has no Steel-base building precedent):
+Each Patches file holds bare <Operation Class="...PatchOperationDistributeCost">
+ops (no FindMod / no Sequence -- the LoadFolders IfModActive gate on the folder
+guarantees the mod's defs are present, exactly as EMM does it). Ops are grouped
+by (metal, percentage, factor) with defNames OR-joined into one xpath.
 
-    Titanium        100% / 0.80     structural / heavy machinery / turret frames
-    Copper          100% / 1.75     thermal / heat-exchange  (factor tracks copper's ~2x mining yield)
-    StainlessSteel  100% / 0.75     food / medical / plumbing bodies
-    Lead             80% / 1.25     nuclear shielding
+Inputs (owner-editable):
+  tools/assignments.tsv  building -> metal(s), adversary-vetted
+  tools/mods.tsv         modName -> packageId -> folder
 
-Silicon/Germanium are NOT emitted: EMM sources them only from Gold (a high-tech
-electronics cost), and the modded electronics here carry Components, not Gold.
-Components are functional parts, not a raw-material substitute -- see README.
-
-When several metals draw from one building's Steel, they are emitted in
-body -> thermal -> shield order and each takes 50% (sequential, matching EMM's
-own multi-metal ShipHeatsink treatment) so later ops are not starved.
+Parameters are EMM's Steel-base medians:
+  Titanium 100/0.80  Copper 100/1.75  StainlessSteel 100/0.75  Lead 80/1.25
+Metals sharing one Steel cost split 50% each, body -> thermal -> shield order
+(sequential, EMM ShipHeatsink style). Silicon/Germanium omitted by design
+(EMM sources them only from Gold; see README).
 """
 import os
 import re
+import shutil
 import sys
 
-# metal -> (solo percentage, extraCostFactor), EMM Steel-base medians
 PARAM = {
     "EM_Titanium":       (100, 0.8),
     "EM_Copper":         (100, 1.75),
     "EM_StainlessSteel": (100, 0.75),
     "EM_Lead":           (80,  1.25),
 }
-ORDER = {"EM_Titanium": 0, "EM_StainlessSteel": 0, "EM_Copper": 1, "EM_Lead": 2}
-SHARED_PCT = 50  # each metal's share when >1 metal draws from the same Steel cost
+ROLE = {"EM_Titanium": 0, "EM_StainlessSteel": 0, "EM_Copper": 1, "EM_Lead": 2}
+SHARED_PCT = 50
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.normpath(os.path.join(HERE, ".."))
 ASSIGN = os.path.join(HERE, "assignments.tsv")
-OUT = os.path.join(HERE, "..", "Patches", "Buildings_MoreCoverage.xml")
+MODS = os.path.join(HERE, "mods.tsv")
+MODPATCHES = os.path.join(ROOT, "ModPatches", "1.6")
+LOADFOLDERS = os.path.join(ROOT, "LoadFolders.xml")
 
 
-def load():
-    builds = []
-    with open(ASSIGN, encoding="utf-8") as fh:
-        for line in fh.read().splitlines()[1:]:
-            p = line.split("\t")
-            if len(p) < 5:
-                continue
-            metals = [m for m in re.findall(r"EM_\w+", p[4]) if m in PARAM]
-            if not metals:
-                continue
-            metals = sorted(set(metals), key=lambda m: ORDER.get(m, 9))
-            builds.append((p[1], metals))
-    return builds
+def load_mods():
+    m = {}
+    for line in open(MODS, encoding="utf-8").read().splitlines()[1:]:
+        name, pid, folder = line.split("\t")
+        m[name] = (pid, folder)
+    return m
 
 
-def op(defname, metal, pct, factor):
+def load_assignments():
+    per_mod = {}
+    for line in open(ASSIGN, encoding="utf-8").read().splitlines()[1:]:
+        p = line.split("\t")
+        if len(p) < 5:
+            continue
+        metals = [x for x in re.findall(r"EM_\w+", p[4]) if x in PARAM]
+        if not metals:
+            continue
+        metals = sorted(set(metals), key=lambda x: ROLE.get(x, 9))
+        per_mod.setdefault(p[0], []).append((p[1], metals))
+    return per_mod
+
+
+def operation(metal, pct, factor, defnames):
+    conds = " or ".join(f'defName="{d}"' for d in defnames)
     return (
-        '      <li Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">\n'
-        "        <success>Always</success>\n"
-        f'        <xpath>/Defs/ThingDef[defName="{defname}"]/costList/Steel</xpath>\n'
-        f"        <newMaterial>{metal}</newMaterial>\n"
-        f"        <percentage>{pct}</percentage>\n"
-        f"        <extraCostFactor>{factor}</extraCostFactor>\n"
-        "      </li>"
+        '  <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">\n'
+        f"    <xpath>/Defs/ThingDef[{conds}]/costList/Steel</xpath>\n"
+        f"    <newMaterial>{metal}</newMaterial>\n"
+        f"    <percentage>{pct}</percentage>\n"
+        f"    <extraCostFactor>{factor}</extraCostFactor>\n"
+        "  </Operation>"
     )
 
 
 def main():
-    builds = load()
-    ops = []
-    for defname, metals in builds:
-        for m in metals:
-            solo_pct, factor = PARAM[m]
-            pct = solo_pct if len(metals) == 1 else SHARED_PCT
-            ops.append(op(defname, m, pct, factor))
-    body = "\n".join(ops)
-    xml = (
-        '<?xml version="1.0" encoding="utf-8" ?>\n<!--\n'
-        "  More Mod Patches for Expanded Materials - Metals.\n"
-        "  DO NOT EDIT - generated by tools/generate.py from tools/assignments.tsv.\n"
-        "  Extends EMM's DistributeCost treatment to modded Steel-costing buildings EMM does not curate,\n"
-        "  using EMM's own Steel-base parameters. Every op has success=Always so an absent def cannot\n"
-        "  abort the sequence. Load after Expanded Materials - Metals.\n-->\n"
-        "<Patch>\n  <Operation Class=\"PatchOperationFindMod\">\n    <mods>\n"
-        "      <li>Expanded Materials - Metals</li>\n    </mods>\n"
-        '    <match Class="PatchOperationSequence">\n      <success>Always</success>\n      <operations>\n'
-        + body
-        + "\n      </operations>\n    </match>\n  </Operation>\n</Patch>\n"
-    )
-    with open(OUT, "w", encoding="utf-8") as fh:
-        fh.write(xml)
-    print(f"wrote {len(ops)} ops across {len(builds)} buildings -> {os.path.normpath(OUT)}")
+    mods = load_mods()
+    per_mod = load_assignments()
+    if os.path.isdir(MODPATCHES):
+        shutil.rmtree(MODPATCHES)
+
+    load_entries = []
+    total_ops = 0
+    for name in sorted(per_mod):
+        pid, folder = mods.get(name, (None, None))
+        if not pid or pid == "MISSING":
+            print(f"  !! no packageId for '{name}', skipping", file=sys.stderr)
+            continue
+        # group defNames by (metal, pct, factor)
+        groups = {}
+        for defname, metals in per_mod[name]:
+            shared = len(metals) > 1
+            for metal in metals:
+                solo_pct, factor = PARAM[metal]
+                pct = solo_pct if not shared else SHARED_PCT
+                groups.setdefault((metal, pct, factor), []).append(defname)
+        # emit in body -> thermal -> shield order
+        ordered = sorted(groups.items(), key=lambda kv: (ROLE[kv[0][0]], kv[0][0], kv[0][1]))
+        ops = [operation(m, pct, fac, sorted(set(dns))) for (m, pct, fac), dns in ordered]
+        total_ops += len(ops)
+
+        d = os.path.join(MODPATCHES, folder, "Patches")
+        os.makedirs(d, exist_ok=True)
+        with open(os.path.join(d, "Buildings.xml"), "w", encoding="utf-8") as fh:
+            fh.write(
+                '<?xml version="1.0" encoding="utf-8" ?>\n'
+                f"<!-- {name}: EMM material coverage. Generated by tools/generate.py. -->\n"
+                "<Patch>\n" + "\n".join(ops) + "\n</Patch>\n"
+            )
+        load_entries.append((pid, folder))
+
+    with open(LOADFOLDERS, "w", encoding="utf-8") as fh:
+        fh.write('<?xml version="1.0" encoding="utf-8" ?>\n<loadFolders>\n  <v1.6>\n    <li>/</li>\n')
+        for pid, folder in sorted(load_entries, key=lambda x: x[1]):
+            fh.write(f'    <li IfModActive="{pid}">ModPatches/1.6/{folder}</li>\n')
+        fh.write("  </v1.6>\n</loadFolders>\n")
+
+    print(f"wrote {total_ops} ops across {len(load_entries)} per-mod folders + LoadFolders.xml")
 
 
 if __name__ == "__main__":

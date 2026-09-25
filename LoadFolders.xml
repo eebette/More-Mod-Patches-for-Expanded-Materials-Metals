@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<loadFolders>
+  <v1.6>
+    <li>/</li>
+    <li IfModActive="JangoDsoul.SimpleStorage.Ref">ModPatches/1.6/15AdaptiveStorageJdsSimpleStorageRefrige</li>
+    <li IfModActive="sarg.alphaanimals">ModPatches/1.6/AlphaAnimals</li>
+    <li IfModActive="sarg.alphabiomes">ModPatches/1.6/AlphaBiomes</li>
+    <li IfModActive="Mlie.CentralizedClimateControl">ModPatches/1.6/CentralizedClimateControlContinued</li>
+    <li IfModActive="CETeam.CombatExtendedArmory">ModPatches/1.6/CombatExtendedArmory</li>
+    <li IfModActive="CETeam.CombatExtendedGuns">ModPatches/1.6/CombatExtendedGuns</li>
+    <li IfModActive="Dubwise.DubsBadHygiene">ModPatches/1.6/DubsBadHygiene</li>
+    <li IfModActive="Dubwise.Rimatomics">ModPatches/1.6/DubsRimatomics</li>
+    <li IfModActive="vat.epoeforked">ModPatches/1.6/ExpandedProstheticsAndOrganEngineeringFo</li>
+    <li IfModActive="Adamas.VendingMachines">ModPatches/1.6/HospitalityVendingMachines</li>
+    <li IfModActive="LWM.DeepStorage">ModPatches/1.6/LwmSDeepStorage</li>
+    <li IfModActive="rimfridge.kv.rw">ModPatches/1.6/RimfridgeNowWithShelves</li>
+    <li IfModActive="RimThunder.Core">ModPatches/1.6/RimthunderCore</li>
+    <li IfModActive="VanillaExpanded.VBrewE">ModPatches/1.6/VanillaBrewingExpanded</li>
+    <li IfModActive="VanillaExpanded.VBrewECandT">ModPatches/1.6/VanillaBrewingExpandedCoffeesAndTeas</li>
+    <li IfModActive="VanillaExpanded.VChemfuelE">ModPatches/1.6/VanillaChemfuelExpanded</li>
+    <li IfModActive="VanillaExpanded.VCookE">ModPatches/1.6/VanillaCookingExpanded</li>
+    <li IfModActive="VanillaExpanded.VCookEHaute">ModPatches/1.6/VanillaCookingExpandedHaute</li>
+    <li IfModActive="VanillaExpanded.VCookEStews">ModPatches/1.6/VanillaCookingExpandedStews</li>
+    <li IfModActive="VanillaExpanded.VCookESushi">ModPatches/1.6/VanillaCookingExpandedSushi</li>
+    <li IfModActive="OskarPotocki.VanillaFactionsExpanded.SettlersModule">ModPatches/1.6/VanillaFactionsExpandedSettlers</li>
+    <li IfModActive="VanillaExpanded.VFECore">ModPatches/1.6/VanillaFurnitureExpanded</li>
+    <li IfModActive="VanillaExpanded.VFEMedical">ModPatches/1.6/VanillaFurnitureExpandedMedicalModule</li>
+    <li IfModActive="VanillaExpanded.VFEProduction">ModPatches/1.6/VanillaFurnitureExpandedProduction</li>
+    <li IfModActive="VanillaExpanded.VGeneticsE">ModPatches/1.6/VanillaGeneticsExpanded</li>
+    <li IfModActive="VanillaExpanded.VNutrientE">ModPatches/1.6/VanillaNutrientPasteExpanded</li>
+    <li IfModActive="VanillaExpanded.VPlantsEMore">ModPatches/1.6/VanillaPlantsExpandedMorePlants</li>
+    <li IfModActive="vanillaquestsexpanded.dronefactory">ModPatches/1.6/VanillaQuestsExpandedDroneFactory</li>
+    <li IfModActive="vanillaquestsexpanded.generator">ModPatches/1.6/VanillaQuestsExpandedTheGenerator</li>
+    <li IfModActive="vin.warehouse.storage">ModPatches/1.6/WarehouseStorage</li>
+  </v1.6>
+</loadFolders>
