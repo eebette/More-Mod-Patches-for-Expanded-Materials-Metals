@@ -23,6 +23,42 @@ Plasteel, Silver, Uranium, …) are left untouched. When several metals draw fro
 one Steel cost they split it sequentially, exactly as EMM does on multi-material
 defs like `ShipHeatsink`.
 
+## Patched mods
+
+128 buildings across 30 mods (building count in parens). Each has its own
+`IfModActive`-gated folder, so only the mods you actually run are touched:
+
+- Combat Extended Armory (24)
+- Dubs Bad Hygiene (17)
+- Alpha Biomes (11)
+- Vanilla Chemfuel Expanded (8)
+- Vanilla Nutrient Paste Expanded (8)
+- Dubs Rimatomics (6)
+- Vanilla Furniture Expanded - Production (6)
+- RimFridge: Now with Shelves! (5)
+- Vanilla Quests Expanded - The Generator (5)
+- Expanded Prosthetics and Organ Engineering - Forked (4)
+- Vanilla Cooking Expanded (4)
+- RimThunder - Core (3)
+- Vanilla Brewing Expanded (3)
+- \[JDS\] Simple Storage - Refrigeration (3)
+- Alpha Animals (2)
+- Centralized Climate Control (Continued) (2)
+- Hospitality: Vending machines (2)
+- Vanilla Furniture Expanded - Medical Module (2)
+- Vanilla Genetics Expanded (2)
+- Combat Extended Guns (1)
+- LWM's Deep Storage (1)
+- Vanilla Brewing Expanded - Coffees and Teas (1)
+- Vanilla Cooking Expanded - Haute (1)
+- Vanilla Cooking Expanded - Stews (1)
+- Vanilla Cooking Expanded - Sushi (1)
+- Vanilla Factions Expanded - Settlers (1)
+- Vanilla Furniture Expanded (1)
+- Vanilla Plants Expanded - More Plants (1)
+- Vanilla Quests Expanded - Drone Factory (1)
+- Warehouse Storage (1)
+
 ## Why Silicon / Germanium are omitted
 
 EMM sources Silicon and Germanium **only from Gold** — its stand-in for a
@@ -50,26 +86,18 @@ invented:
   yield vs Steel/Iron, so a copper building costs roughly the same number of cells
   mined as the Steel original despite the larger unit count.
 
-## Structure & regenerating
+## Structure
 
-Laid out exactly like EMM's own `ModPatches/` — one folder per patched mod under
+Laid out like EMM's own `ModPatches/` — one folder per patched mod under
 `ModPatches/1.6/<Mod>/Patches/`, each gated in `LoadFolders.xml` by
 `IfModActive="<packageId>"`, so a mod's patches load only when that mod is
 present. Inside, bare `<Operation Class="…PatchOperationDistributeCost">` ops
 (no `FindMod`/`Sequence` needed — the folder gate handles presence), with
 defNames OR-joined per (metal, %, factor), just like EMM's hand-written files.
 
-`tools/generate.py` regenerates the whole `ModPatches/` tree **and**
-`LoadFolders.xml` from two owner-editable tables:
-
-- `tools/assignments.tsv` — the curated (adversary-vetted) building→metal list
-- `tools/mods.tsv` — `modName → packageId → folder`
-
-```
-python3 tools/generate.py
-```
-
-Edit either table (or the parameters at the top of `generate.py`), then re-run.
+To cover another mod, add a `ModPatches/1.6/<Mod>/Patches/` folder and one
+`IfModActive="<packageId>"` line in `LoadFolders.xml`. `tools/assignments.tsv`
+and `tools/adversary-review.md` record which building got which metal, and why.
 
 ## Requires
 
