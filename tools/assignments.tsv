@@ -1,0 +1,139 @@
+mod	defName	label	steel_cost	patch	reasoning	signals
+Alpha Animals	AA_HexagelCoreReactor	hexagel core reactor	steel:100	EM_Titanium 45%	high-strength frame; radiation shielding	Breakdownable,Flickable,Glower,HeatPusher,Power,Refuelable|cat:Power
+Alpha Animals	VEF_AdvancedAnimalImplantsTable	advanced animal prosthetics table	steel:200	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Breakdownable,Flickable,Power|cat:Production
+Alpha Biomes	AB_BoneDistillery	bone drill	steel:150	EM_Titanium 45%	high-strength frame	Breakdownable,Flickable,Power,Spawner|cat:Furniture
+Alpha Biomes	AB_CoreSampleDrill	core sample drill	steel:250	EM_Titanium 45%	high-strength frame	CoreSampleDrill,Flickable,Forbiddable,Power|cat:AB_AlphaBiomesBuildings
+Alpha Biomes	AB_MagmaThermalPlant	magma-thermal generator	steel:340	EM_Copper 12%	heat-exchange / cooling	AmbientSound,Breakdownable,Power,Stunnable|cat:Power
+Alpha Biomes	AB_MagmaThermalPlant_Advanced	advanced magma-thermal generator	steel:300	EM_Copper 12%	heat-exchange / cooling	AmbientSound,Breakdownable,Power,Stunnable|cat:Power
+Alpha Biomes	AB_PropaneHeater	propane heater	steel:30	EM_Copper 12%	heat-exchange / cooling	Breakdownable,Flickable,Glower,Refuelable,TempControl|cat:AB_AlphaBiomesBuildings
+Alpha Biomes	AB_PropaneSmelter	propane smelter	steel:170	EM_Titanium 45%	high-strength frame	Breakdownable,Glower,Refuelable|cat:Production
+Alpha Biomes	AB_PropaneStove	propane stove	steel:60	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	HeatPusher,Refuelable|cat:AB_AlphaBiomesBuildings
+Alpha Biomes	AB_PropaneTableMachining	propane machining table	steel:150	EM_Titanium 45%	high-strength frame	AffectedByFacilities,Breakdownable,Glower,Refuelable|cat:Production
+Alpha Biomes	AB_PropaneTap	propane tap	steel:60	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	ConvertResourceToThing|cat:Furniture
+Alpha Biomes	AB_SlimeCompressor	slime compressor	steel:50	EM_Titanium 45%	high-strength frame	AdvancedResourceProcessor,Flickable,Power|cat:Production
+Alpha Biomes	AB_Turret_Propane	propane turret	steel:70	EM_Titanium 45%	high-strength frame	Breakdownable,Explosive,Flickable,Forbiddable,Power,Refuelable|cat:Security
+Centralized Climate Control (Continued)	AirThermal	airThermal	steel:200	EM_Copper 12%	heat-exchange / cooling; computing / control electronics	AirFlow,Breakdownable,Flickable,Power,TempControl|cat:CentralClimateControl
+Centralized Climate Control (Continued)	LargeAirThermal	largeAirThermal	steel:600	EM_Copper 12%	heat-exchange / cooling; computing / control electronics	AirFlow,Breakdownable,Flickable,Power,TempControl|cat:CentralClimateControl
+Colony Manager Fork	FM_ManagerStation	manager desk	steel:50	EM_Silicon 12%	computing / control electronics	Breakdownable,Flickable,Forbiddable,ManagerStation,Power|cat:Production
+Combat Extended Armory	CE_Turret_12PounderBombard	12-pounder bombard	steel:200	EM_Titanium 45%	high-strength frame	|cat:Security
+Combat Extended Armory	CE_Turret_GatlingGun	Gatling gun	steel:90	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	CE_Turret_M1919Browning	M1919 machine gun	steel:160	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	CE_Turret_M2HB	M2 Browning machine gun	steel:210	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	CE_Turret_MkNineteenGL	Mk 19 grenade launcher	steel:130	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	CE_Turret_OrganGun	organ gun	steel:150	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	CE_Turret_PKM	PKM machine gun	steel:120	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	CE_Turret_PortableMortar	60mm portable mortar	steel:110	EM_Titanium 45%	high-strength frame	|cat:Security
+Combat Extended Armory	CE_Turret_SPGNine	SPG-9 recoilless gun	steel:250	EM_Titanium 45%	high-strength frame	|cat:Security
+Combat Extended Armory	CE_Turret_ShotgunTurret	shotgun auto-turret	steel:100	EM_Titanium 45%, EM_Silicon 10%(added)	high-strength frame	Power
+Combat Extended Armory	CE_Turret_TwelvePounder	12-pounder cannon	steel:200	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	CE_Turret_Vickers	Vickers machine gun	steel:170	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_12PounderBombard	12-pounder bombard	steel:200	EM_Titanium 45%	high-strength frame	|cat:Security
+Combat Extended Armory	Turret_GatlingGun	Gatling gun	steel:90	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_M1919Browning	M1919 machine gun	steel:160	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_M2HB	M2 Browning machine gun	steel:210	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_MkNineteenGL	Mk 19 grenade launcher	steel:130	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_OrganGun	organ gun	steel:150	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_PKM	PKM machine gun	steel:120	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_PortableMortar	60mm portable mortar	steel:110	EM_Titanium 45%	high-strength frame	|cat:Security
+Combat Extended Armory	Turret_SPGNine	SPG-9 recoilless gun	steel:250	EM_Titanium 45%	high-strength frame	|cat:Security
+Combat Extended Armory	Turret_ShotgunTurret	shotgun auto-turret	steel:100	EM_Titanium 45%, EM_Silicon 10%(added)	high-strength frame	Power
+Combat Extended Armory	Turret_TwelvePounder	12-pounder cannon	steel:200	EM_Titanium 45%	high-strength frame	
+Combat Extended Armory	Turret_Vickers	Vickers machine gun	steel:170	EM_Titanium 45%	high-strength frame	
+Combat Extended Guns	CE_Artillery_Howitzer	105mm howitzer	steel:400	EM_Titanium 45%	high-strength frame	|cat:Security
+Dubs Bad Hygiene	AirConOutdoorUnit	Air-Con Outdoor Unit	steel:90	EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	AirconBaseUnit,Breakdownable,Flickable,Pipe,Power|cat:Hygiene
+Dubs Bad Hygiene	AirconIndoorUnit	air-con indoor unit	steel:25	EM_Copper 12%	heat-exchange / cooling	CompAirconUnit,Power,TempControl
+Dubs Bad Hygiene	BiosolidsComposter	Biosolids Composter	steel:45	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Composter,Forbiddable,TemperatureRuinable|cat:Hygiene
+Dubs Bad Hygiene	CryogenicExtractionNode	cryogenic extraction node	steel:100	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Breakdownable,Flickable,HeatPusher,IceWell,Pipe,Power
+Dubs Bad Hygiene	DBHSaunaHeaterElec	Electric Sauna Heater	steel:20	EM_Copper 12%	heat-exchange / cooling	Flickable,Forbiddable,Glower,Power,SaunaHeater|cat:Joy
+Dubs Bad Hygiene	FireSprinkler	Fire Sprinkler	steel:15	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Pipe,Sprinkler,Usable|cat:Hygiene
+Dubs Bad Hygiene	FreezerUnit	Walk-in freezer unit	steel:30	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	CompAirconUnit,Power,Thermostat
+Dubs Bad Hygiene	GeothermHeater	Geothermal heater	steel:240	EM_Copper 12%	heat-exchange / cooling	Breakdownable,CompBoiler,Pipe|cat:Temperature
+Dubs Bad Hygiene	HotWaterTank	hot water tank	steel:75	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Flickable,HeatStore,Pipe|cat:Hygiene
+Dubs Bad Hygiene	IrrigationSprinkler	Irrigation Sprinkler	steel:15	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Pipe,Sprinkler|cat:Hygiene
+Dubs Bad Hygiene	KitchenSink	Kitchen Sink	steel:15	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	|cat:Hygiene
+Dubs Bad Hygiene	RadiatorLarge	large radiator	steel:15	EM_Copper 12%	heat-exchange / cooling	Radiator
+Dubs Bad Hygiene	RadiatorStuffed	radiator	steel:15	EM_Copper 12%	heat-exchange / cooling	Radiator
+Dubs Bad Hygiene	RadiatorTowelRail	Towel Rail	steel:15	EM_Copper 12%	heat-exchange / cooling	Radiator
+Dubs Bad Hygiene	SolarHeater	solar heater	steel:75	EM_Copper 12%	heat-exchange / cooling	CompBoiler,Pipe|cat:Temperature
+Dubs Bad Hygiene	WashingMachine	Washing Machine	steel:100	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Breakdownable,Flickable,Forbiddable,Pipe,Power|cat:Hygiene
+Dubs Bad Hygiene	plumbingValve	plumbing valve	steel:15	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Flickable,Pipe|cat:Hygiene
+Dubs Rimatomics	CoolingRadiator	Radiator	steel:350	EM_Copper 12%	heat-exchange / cooling	Flickable,Pipe,Power,Upgradable
+Dubs Rimatomics	DU_Blastdoor	DU Blast door	steel:40	EM_Titanium 45%	high-strength frame; radiation shielding	Breakdownable,Power|cat:Rimatomics
+Dubs Rimatomics	NuclearResearchBench	Rimatomics research bench	steel:250	EM_Silicon 12%	high-strength frame; computing / control electronics; radiation shielding	AffectedByFacilities,Breakdownable,Flickable,Power
+Dubs Rimatomics	PPCRailgun	Punisher	steel:100	EM_Titanium 45%	high-strength frame	Breakdownable,Flickable,Power,Upgradable
+Dubs Rimatomics	PPCWeaponsConsole	SACS	steel:250	EM_Silicon 12%	computing / control electronics	Breakdownable,Flickable,Mannable,Power
+Dubs Rimatomics	PlutoniumProcessor	Plutonium Processor	steel:200	EM_Titanium 45%, EM_Lead 15%	high-strength frame; computing / control electronics; radiation shielding	Breakdownable,Facility,Flickable,Power
+Dubs Rimatomics	RadarDish	TACS	steel:100	EM_Germanium 10%, EM_Silicon 10%(added)	sensors / optics	Breakdownable,Flickable,Power,Upgradable
+Dubs Rimatomics	RadiationShielding	Reinforced DU Wall	steel:5	EM_Titanium 45%, EM_Lead 15%	high-strength frame; radiation shielding	|cat:Rimatomics
+Dubs Rimatomics	TableRimatomicsMachining	Rimatomics machining table	steel:150	EM_Titanium 45%	high-strength frame; radiation shielding	AffectedByFacilities,Breakdownable,Flickable,Glower,Power
+Expanded Prosthetics and Organ Engineering - Forked	TableBasicProsthetic	basic prosthetics workbench	steel:35	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities|cat:Production
+Expanded Prosthetics and Organ Engineering - Forked	TableBionics	bionics workbench	steel:250	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Breakdownable,Facility,Flickable,Power|cat:Production
+Expanded Prosthetics and Organ Engineering - Forked	TableOrgans	tissue printer	steel:250	EM_StainlessSteel 45%, EM_Silicon 10%(added)	hygienic/corrosion-resistant body	AffectedByFacilities,Breakdownable,Facility,Flickable,Power|cat:Production
+Expanded Prosthetics and Organ Engineering - Forked	TableSimpleProsthetic	prosthetic workbench	steel:150	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Breakdownable,Flickable,Power|cat:Production
+Hospitality: Vending machines	OwlFridgeVendingMachine	fridge vending machine	steel:40	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,VendingMachine|cat:Misc
+Hospitality: Vending machines	RimFridgeVendingMachine	fridge vending machine	steel:40	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,VendingMachine|cat:Misc
+LWM's Deep Storage	LWM_DS_RimFridge_Refrigerator	Deep Refrigerator	steel:80	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,Properties,SecondLayer
+RimFridge: Now with Shelves!	RimFridge_QuadRefrigerator	Quad Refrigerator	steel:60	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
+RimFridge: Now with Shelves!	RimFridge_Refrigerator	Dual Refrigerator	steel:40	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
+RimFridge: Now with Shelves!	RimFridge_SingleRefrigerator	Single Refrigerator	steel:20	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
+RimFridge: Now with Shelves!	RimFridge_SingleWallRefrigerator	Wall Single Refrigerator	steel:20	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
+RimFridge: Now with Shelves!	RimFridge_WallRefrigerator	Wall Dual Refrigerator	steel:40	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
+RimThunder - Core	RTC_EngineHanger	engine hanger	steel:125	EM_Titanium 45%	high-strength frame	Facility|cat:Misc
+RimThunder - Core	RT_AssemblyBench	assembly platfrom	steel:200	EM_Titanium 45%	high-strength frame	AffectedByFacilities,Breakdownable,Flickable,Power,RandomBuildingGraphic|cat:Production
+RimThunder - Core	RT_AssemblyCrane	assembly bridge crane	steel:300	EM_Titanium 45%	high-strength frame	AffectedByFacilities,Breakdownable,Flickable|cat:Production
+Vanilla Brewing Expanded	VBE_AmbrandyDistillery	ambrandy distillery	steel:100	EM_StainlessSteel 45%, EM_Copper 12%(added)	hygienic/corrosion-resistant body	ItemProcessor|cat:Production
+Vanilla Brewing Expanded	VBE_GinStill	gin still	steel:40	EM_StainlessSteel 45%, EM_Copper 12%(added)	hygienic/corrosion-resistant body	ItemProcessor|cat:Production
+Vanilla Brewing Expanded	VBE_SodaFountain	soda fountain	steel:40	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Flickable,ItemProcessor,Power|cat:Production
+Vanilla Brewing Expanded - Coffees and Teas	VBE_EspressoMachineBuilding	espresso machine	steel:45	EM_StainlessSteel 45%, EM_Copper 12%(added)	high-strength frame	AffectedByFacilities,Flickable,Power|cat:Production
+Vanilla Chemfuel Expanded	PS_DeepchemRefinery	deepchem refinery	steel:200	EM_Titanium 45%	high-strength frame	Power,Refinery,Resource,ResourceProcessor|cat:VCHE_PipeNetworks
+Vanilla Chemfuel Expanded	VCHE_ChemfuelTap	chemfuel tap	steel:60	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	ConvertResourceToThing|cat:VCHE_PipeNetworks
+Vanilla Chemfuel Expanded	VCHE_DeepchemDrain	deepchem drain	steel:60	EM_StainlessSteel 45%	high-strength frame	ConvertThingToResource|cat:VCHE_PipeNetworks
+Vanilla Chemfuel Expanded	VCHE_DeepchemPipe	deepchem pipe	steel:4	EM_StainlessSteel 45%	high-strength frame	Resource|cat:VCHE_PipeNetworks
+Vanilla Chemfuel Expanded	VCHE_DeepchemPumpjack	deepchem pumpjack	steel:150	EM_Titanium 45%	high-strength frame	Flickable,Power,Pumpjack,ResourceStorage|cat:VCHE_PipeNetworks
+Vanilla Chemfuel Expanded	VCHE_DeepchemTap	deepchem tap	steel:60	EM_StainlessSteel 45%	high-strength frame	ConvertResourceToThing|cat:VCHE_PipeNetworks
+Vanilla Chemfuel Expanded	VCHE_DeepchemValve	deepchem valve	steel:15	EM_StainlessSteel 45%	high-strength frame	Flickable,PipeValve|cat:VCHE_PipeNetworks
+Vanilla Chemfuel Expanded	VCHE_UndergroundDeepchemPipe	subterranean deepchem pipe	steel:6	EM_StainlessSteel 45%	high-strength frame	Resource|cat:VCHE_PipeNetworks
+Vanilla Cooking Expanded	VCE_CanningMachine	canning machine	steel:100	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Flickable,Power|cat:Production
+Vanilla Cooking Expanded	VCE_CheesePress	cheese press	steel:10	EM_StainlessSteel 45%	high-strength frame	ItemProcessor|cat:Production
+Vanilla Cooking Expanded	VCE_ElectricPot	electric pot	steel:50	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Flickable,ItemProcessor,Power|cat:Production
+Vanilla Cooking Expanded	VCE_Grill	grill	steel:75	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Glower,HeatPusher,Refuelable|cat:Production
+Vanilla Cooking Expanded - Haute	VCE_ElectricHauteSection	electric haute section	steel:140	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Facility,HeatPusher,Power,ReportWorkSpeed|cat:Production
+Vanilla Cooking Expanded - Stews	VCE_StewPot	stew pot	steel:50	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Glower,HeatPusher,ItemProcessor,Refuelable|cat:Production
+Vanilla Cooking Expanded - Sushi	VCE_SoyFermenter	soy sauce fermenter	steel:30	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	ItemProcessor|cat:Production
+Vanilla Factions Expanded - Settlers	ChemBoiler	chemboiler	steel:100	EM_Copper 12%	heat-exchange / cooling	Explosive,Flickable,Glower,HeatPusher,Refuelable|cat:Temperature
+Vanilla Furniture Expanded	AirConditioningUnit	air conditioning unit	steel:180	EM_Copper 12%	heat-exchange / cooling	Breakdownable,Flickable,Power,TempControl|cat:Temperature
+Vanilla Furniture Expanded	Joy_InudstrialComputer	old computer	steel:60	EM_Silicon 12%	computing / control electronics	Flickable,Power,RoomIdentifier|cat:Joy
+Vanilla Furniture Expanded	Joy_ModernComputer	modern computer	steel:100	EM_Silicon 12%	computing / control electronics	Flickable,Power,RoomIdentifier|cat:Joy
+Vanilla Furniture Expanded	Radio_Industrial	industrial radio	steel:50	EM_Silicon 45%	high-strength frame	Breakdownable,Flickable,Power,RoomIdentifier|cat:Joy
+Vanilla Furniture Expanded - Medical Module	Facility_VitalsCentre	vitals centre	steel:90	EM_StainlessSteel 45%, EM_Germanium 8%(added)	hygienic/corrosion-resistant body	Facility,Flickable,Power|cat:Misc
+Vanilla Furniture Expanded - Medical Module	VFEM_Wall_Sterile	sterile wall	steel:5	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	|cat:Structure
+Vanilla Furniture Expanded - Production	VFE_ComponentFabricationBench	assembly bench	steel:100	EM_Titanium 45%	high-strength frame	AffectedByFacilities,Breakdownable,Flickable,Power|cat:Production
+Vanilla Furniture Expanded - Production	VFE_FueledSmelter	fueled smelter	steel:170	EM_Titanium 45%	high-strength frame	HeatPusher,Refuelable|cat:Production
+Vanilla Furniture Expanded - Production	VFE_KitchenSinkCabinet	kitchen sink cabinet	steel:100	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Facility|cat:Misc
+Vanilla Furniture Expanded - Production	VFE_TableButcherElectric	electric butcher	steel:20	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Breakdownable,Flickable,Power|cat:Production
+Vanilla Furniture Expanded - Production	VFE_TableMachiningLarge	large machining table	steel:300	EM_Titanium 45%	high-strength frame	AffectedByFacilities,Breakdownable,Flickable,Power|cat:Production
+Vanilla Furniture Expanded - Production	VFE_TableStoveLarge	large stove	steel:160	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Breakdownable,Flickable,HeatPusher,Power|cat:Production
+Vanilla Genetics Expanded	GR_GeneticExtractionTable	genome extractor table	steel:100	EM_StainlessSteel 45%	high-strength frame	AffectedByFacilities,Breakdownable,Flickable,Power|cat:GR_GeneticsTab
+Vanilla Genetics Expanded	GR_MechahybridAntenna	mechahybrid antenna	steel:150	EM_Silicon 10%	sensors / optics	RegisterMechAntenna|cat:GR_GeneticsTab
+Vanilla Genetics Expanded	GR_NutrientVat	nutrient vat	steel:75	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Facility|cat:GR_GeneticsTab
+Vanilla Nutrient Paste Expanded	VNPE_NutrientPasteDripper	nutrient paste dripper	steel:50	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Facility,Flickable,Power,Resource|cat:VCHE_PipeNetworks
+Vanilla Nutrient Paste Expanded	VNPE_NutrientPasteFeeder	nutrient paste feeder	steel:20	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	ConvertResourceToThing,Flickable,Power|cat:VCHE_PipeNetworks
+Vanilla Nutrient Paste Expanded	VNPE_NutrientPasteGrinder	nutrient paste grinder	steel:100	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Flickable,Power,Resource|cat:VCHE_PipeNetworks
+Vanilla Nutrient Paste Expanded	VNPE_NutrientPastePipe	nutrient paste pipe	steel:2	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Resource,SpillWhenDamaged|cat:VCHE_PipeNetworks
+Vanilla Nutrient Paste Expanded	VNPE_NutrientPasteTap	nutrient paste tap	steel:30	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Flickable,Power,Resource|cat:VCHE_PipeNetworks
+Vanilla Nutrient Paste Expanded	VNPE_NutrientPasteValve	nutrient paste valve	steel:15	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Flickable,PipeValve|cat:VCHE_PipeNetworks
+Vanilla Nutrient Paste Expanded	VNPE_NutrientPasteVat	nutrient paste vat	steel:120	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Power,RegisterIngredients,ResourceStorage|cat:VCHE_PipeNetworks
+Vanilla Nutrient Paste Expanded	VNPE_UndergroundNutrientPastePipe	subterranean nutrient paste pipe	steel:4	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	Resource,SpillWhenDamaged|cat:VCHE_PipeNetworks
+Vanilla Plants Expanded - More Plants	VCE_VegMilkExtractor	vegetable milk extractor	steel:75	EM_StainlessSteel 45%	high-strength frame	AffectedByFacilities,HeatPusher,Power|cat:Production
+Vanilla Quests Expanded - Drone Factory	VFEFactory_DroneAutofactory	drone autofactory	steel:440	EM_Titanium 45%, EM_Silicon 12%	high-strength frame; computing / control electronics	AdvancedResourceProcessor,AffectedByFacilities,Flickable,HeatPusher,Power|cat:VFEFactory_Factories
+Vanilla Quests Expanded - Drone Factory	VQE_DroneTransmitter	drone transmitter	steel:80	EM_Silicon 12%	computing / control electronics	Power|cat:Misc
+Vanilla Quests Expanded - The Generator	VQE_AncientGeothermalGenetron	ancient geothermal ARC	steel:440	EM_Copper 12%	heat-exchange / cooling	
+Vanilla Quests Expanded - The Generator	VQE_Genetron_Geothermal	geothermal ARC	steel:300	EM_Copper 12%	heat-exchange / cooling	Breakdownable,Flickable,Glower,HeatPusher,PowerGenetron,Stunnable|cat:Power
+Vanilla Quests Expanded - The Generator	VQE_Genetron_Nuclear	nuclear ARC	steel:100	EM_Titanium 45%, EM_Lead 15%, EM_Copper 12%(added)	high-strength frame; radiation shielding	Glower,HeatPusher,PowerGenetron,RefuelableWithOverdrive,Stunnable|cat:Power
+Vanilla Quests Expanded - The Generator	VQE_Genetron_SteamPowered	steam-powered ARC	steel:100	EM_StainlessSteel 45%, EM_Copper 12%(added)	hygienic/corrosion-resistant body	Breakdownable,Flickable,Glower,HeatPusher,PowerGenetron,Stunnable|cat:Power
+Vanilla Quests Expanded - The Generator	VQE_Genetron_ThermalVent	thermal-vent ARC	steel:200	EM_Copper 12%	heat-exchange / cooling	Breakdownable,Flickable,Glower,HeatPusher,PowerGenetron,Stunnable|cat:Power
+Vanilla Trading Expanded	VTE_TradingTerminal	trading terminal	steel:140	EM_Silicon 12%	computing / control electronics	Breakdownable,Flickable,Power|cat:Misc
+Warehouse Storage	Vin_FR	Roller Fridge	steel:30	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Breakdownable,Flickable,Glower,Power|cat:Temperature
+[1.5&Adaptive Storage][JDS] Simple Storage - Refrigeration	JDS_IceBox	Ice Box	steel:150	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power
+[1.5&Adaptive Storage][JDS] Simple Storage - Refrigeration	JDS_RefrigeratedBoxTrucks	Refrigerated Box Trucks	steel:800	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power
+[1.5&Adaptive Storage][JDS] Simple Storage - Refrigeration	JDS_Refrigerator	Refrigerator	steel:300	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power
