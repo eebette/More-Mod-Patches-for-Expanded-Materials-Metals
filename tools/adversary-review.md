@@ -485,3 +485,14 @@ Row numbers below count data rows, excluding the TSV header. Steel and assigned 
 | 175. `JDS_Refrigerator` | 300 | Copper 12% | **keep** - The refrigeration label and power support cooling, including the otherwise ambiguous Ice Box. |
 
 Coverage: **175 rows; 209 existing material assignments: 144 keep, 54 remove, 11 change.** Additions are separate from these counts.
+
+## 2026-09-25 storage additions (Reel's Expanded Storage; [sbz] Neat Storage evaluated)
+
+| defName | Steel | Metal | Verdict and one-line reason |
+| --- | ---: | --- | --- |
+| `ReelStorageNewFridge` | 185 | StainlessSteel 45% + Copper 12% | **keep** - Refrigerated food storage (AdaptiveStorage coolingOffset 105, powered); identical role to the RimFridge/JDS refrigerators - hygienic body + active cooling. |
+| `ReelStorageNewMedicineCabinet` | 170 | StainlessSteel 45% + Copper 12% | **keep** - Refrigerated medical storage; medical body maps to StainlessSteel, active cooling to Copper - same fridge profile. |
+| `ReelStorageNewLargeLocker` | 135 | (none) | **skip** - Plain metal apparel locker, no cooling/food/medical/structural function; owner elected to leave plain fixed-Steel storage unpatched. |
+| `ReelStorageMedicineCabinet` (Old/) | 85 | (none) | **skip** - Retired def (`designationCategory Inherit="False"`), not player-buildable. |
+| [sbz] Neat Storage - all 54 building defs | - | (none) | **skip** - Every def is `costStuffCount` (stuffable); no fixed `Steel` node for `DistributeCost` to rewrite. Material is the player's stuff choice + EMM interchangeability. |
+

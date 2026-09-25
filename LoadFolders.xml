@@ -13,6 +13,7 @@
     <li IfModActive="vat.epoeforked">ModPatches/1.6/ExpandedProstheticsAndOrganEngineeringFo</li>
     <li IfModActive="Adamas.VendingMachines">ModPatches/1.6/HospitalityVendingMachines</li>
     <li IfModActive="LWM.DeepStorage">ModPatches/1.6/LwmSDeepStorage</li>
+    <li IfModActive="reel.expanded.storage">ModPatches/1.6/ReelSExpandedStorage</li>
     <li IfModActive="rimfridge.kv.rw">ModPatches/1.6/RimfridgeNowWithShelves</li>
     <li IfModActive="RimThunder.Core">ModPatches/1.6/RimthunderCore</li>
     <li IfModActive="VanillaExpanded.VBrewE">ModPatches/1.6/VanillaBrewingExpanded</li>

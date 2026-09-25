@@ -25,7 +25,7 @@ defs like `ShipHeatsink`.
 
 ## Patched mods
 
-128 buildings across 30 mods. Each mod has its own `IfModActive`-gated folder, so only
+130 buildings across 31 mods. Each mod has its own `IfModActive`-gated folder, so only
 the mods you actually run are touched. Expand for the exact defs and metals:
 
 <details><summary>Combat Extended Armory (24)</summary>
@@ -223,6 +223,13 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 - `OwlFridgeVendingMachine` - fridge vending machine -> Copper, StainlessSteel
 - `RimFridgeVendingMachine` - fridge vending machine -> Copper, StainlessSteel
+
+</details>
+
+<details><summary>Reel's Expanded Storage (2)</summary>
+
+- `ReelStorageNewFridge` - fridge -> Copper, StainlessSteel
+- `ReelStorageNewMedicineCabinet` - medical cabinet -> Copper, StainlessSteel
 
 </details>
 

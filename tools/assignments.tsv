@@ -73,6 +73,9 @@ Expanded Prosthetics and Organ Engineering - Forked	TableSimpleProsthetic	prosth
 Hospitality: Vending machines	OwlFridgeVendingMachine	fridge vending machine	steel:40	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,VendingMachine|cat:Misc
 Hospitality: Vending machines	RimFridgeVendingMachine	fridge vending machine	steel:40	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,VendingMachine|cat:Misc
 LWM's Deep Storage	LWM_DS_RimFridge_Refrigerator	Deep Refrigerator	steel:80	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,Properties,SecondLayer
+Reel's Expanded Storage	ReelStorageNewFridge	fridge	steel:185	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Flickable,Glower,Power|cat:BuildingsFurniture
+Reel's Expanded Storage	ReelStorageNewMedicineCabinet	medical cabinet	steel:170	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Flickable,Glower,Power|cat:BuildingsFurniture
+Reel's Expanded Storage	ReelStorageNewLargeLocker	apparel locker	steel:135	none (plain metal storage, no cooling; left unpatched per owner)	plain furniture body - not thermal/food/medical/structural	Flickable|cat:BuildingsFurniture
 RimFridge: Now with Shelves!	RimFridge_QuadRefrigerator	Quad Refrigerator	steel:60	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
 RimFridge: Now with Shelves!	RimFridge_Refrigerator	Dual Refrigerator	steel:40	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
 RimFridge: Now with Shelves!	RimFridge_SingleRefrigerator	Single Refrigerator	steel:20	EM_StainlessSteel 45%, EM_Copper 12%	hygienic/corrosion-resistant body; heat-exchange / cooling	Power,SecondLayer
