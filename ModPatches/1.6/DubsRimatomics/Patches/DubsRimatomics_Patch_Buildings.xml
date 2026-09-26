@@ -8,10 +8,15 @@
     <extraCostFactor>0.8</extraCostFactor>
   </Operation>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
-    <xpath>/Defs/ThingDef[defName="DU_Blastdoor" or defName="PPCRailgun" or defName="TableRimatomicsMachining"]/costList/Steel</xpath>
+    <xpath>/Defs/ThingDef[defName="DU_Blastdoor" or defName="PPCRailgun"]/costList/Steel</xpath>
     <newMaterial>EM_Titanium</newMaterial>
     <percentage>100</percentage>
     <extraCostFactor>0.8</extraCostFactor>
+  </Operation>
+  <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
+    <xpath>/Defs/ThingDef[defName="TableRimatomicsMachining"]/costList/Steel</xpath>
+    <newMaterial>EM_TemperedSteel</newMaterial>
+    <percentage>100</percentage>
   </Operation>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
     <xpath>/Defs/ThingDef[defName="CoolingRadiator"]/costList/Steel</xpath>

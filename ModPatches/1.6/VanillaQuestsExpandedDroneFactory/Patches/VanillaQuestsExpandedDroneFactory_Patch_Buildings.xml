@@ -3,8 +3,7 @@
 <Patch>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
     <xpath>/Defs/ThingDef[defName="VFEFactory_DroneAutofactory"]/costList/Steel</xpath>
-    <newMaterial>EM_Titanium</newMaterial>
-    <percentage>100</percentage>
-    <extraCostFactor>0.8</extraCostFactor>
+    <newMaterial>EM_TemperedSteel</newMaterial>
+    <percentage>50</percentage>
   </Operation>
 </Patch>

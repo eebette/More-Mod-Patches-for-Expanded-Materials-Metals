@@ -8,13 +8,12 @@
     <extraCostFactor>0.75</extraCostFactor>
   </Operation>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
-    <xpath>/Defs/ThingDef[defName="AB_BoneDistillery" or defName="AB_CoreSampleDrill" or defName="AB_PropaneSmelter" or defName="AB_PropaneTableMachining" or defName="AB_SlimeCompressor" or defName="AB_Turret_Propane"]/costList/Steel</xpath>
-    <newMaterial>EM_Titanium</newMaterial>
+    <xpath>/Defs/ThingDef[defName="AB_PropaneSmelter" or defName="AB_PropaneTableMachining" or defName="AB_SlimeCompressor"]/costList/Steel</xpath>
+    <newMaterial>EM_TemperedSteel</newMaterial>
     <percentage>100</percentage>
-    <extraCostFactor>0.8</extraCostFactor>
   </Operation>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
-    <xpath>/Defs/ThingDef[defName="AB_MagmaThermalPlant" or defName="AB_MagmaThermalPlant_Advanced" or defName="AB_PropaneHeater"]/costList/Steel</xpath>
+    <xpath>/Defs/ThingDef[defName="AB_PropaneHeater"]/costList/Steel</xpath>
     <newMaterial>EM_Copper</newMaterial>
     <percentage>100</percentage>
     <extraCostFactor>1.75</extraCostFactor>

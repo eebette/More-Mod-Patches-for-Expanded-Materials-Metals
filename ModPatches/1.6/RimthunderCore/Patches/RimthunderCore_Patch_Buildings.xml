@@ -3,8 +3,7 @@
 <Patch>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
     <xpath>/Defs/ThingDef[defName="RTC_EngineHanger" or defName="RT_AssemblyBench" or defName="RT_AssemblyCrane"]/costList/Steel</xpath>
-    <newMaterial>EM_Titanium</newMaterial>
+    <newMaterial>EM_TemperedSteel</newMaterial>
     <percentage>100</percentage>
-    <extraCostFactor>0.8</extraCostFactor>
   </Operation>
 </Patch>

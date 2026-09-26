@@ -1,3 +1,9 @@
+# NOTE (2026-09-26 Masonry rework): re-audited against EMM-Metals + EMM-Masonry together.
+# Conventional turrets/artillery, civil power plants, deepchem refinery/pumpjack and extraction
+# drills moved OFF metal to concrete (see the Masonry patch + its tools/adversary-review.md).
+# Industrial machinery (smelters, machining, assembly, factory) moved Titanium -> TemperedSteel
+# (the author's metal for mundane automation). Rows below are the original research ledger;
+# the shipped truth is ModPatches/ + the README dropdowns.
 mod	defName	label	steel_cost	patch	reasoning	signals
 Alpha Animals	AA_HexagelCoreReactor	hexagel core reactor	steel:100	EM_Titanium 45%	high-strength frame; radiation shielding	Breakdownable,Flickable,Glower,HeatPusher,Power,Refuelable|cat:Power
 Alpha Animals	VEF_AdvancedAnimalImplantsTable	advanced animal prosthetics table	steel:200	EM_StainlessSteel 45%	hygienic/corrosion-resistant body	AffectedByFacilities,Breakdownable,Flickable,Power|cat:Production

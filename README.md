@@ -17,8 +17,9 @@ It reuses EMM's own `ArgonicCore.PatchOperations.PatchOperationDistributeCost` w
 indistinguishable in form and numbers from EMM's hand-written ones. Each patched building's `Steel` cost is split into
 one or more of EMM's metals by role:
 
-> a turret, reactor or heavy-machinery frame becomes Titanium; a radiator or heater becomes Copper; a food, medical or
-> plumbing body becomes StainlessSteel; nuclear shielding takes Lead.
+> a reactor or energy weapon becomes Titanium; industrial machinery becomes TemperedSteel; a radiator or heater becomes
+> Copper; a food, medical or plumbing body becomes StainlessSteel; nuclear shielding takes Lead. Conventional turrets,
+> civil power plants and heavy extraction rigs are concrete instead (the Masonry patch's job).
 
 Which metal goes where, and how much, is read off EMM's own patches rather than invented - see
 [Methodology](#methodology).
@@ -27,49 +28,24 @@ Which metal goes where, and how much, is read off EMM's own patches rather than 
 
 | Metal | Buildings | EMM Steel-base params |
 |---|---|---|
-| **Titanium** | structural frames, heavy machinery, turrets, reactors, refineries | 100% / factor 0.80 |
-| **Copper** | thermal / heat-exchange (heaters, coolers, radiators, generators) | 100% / factor 1.75 |
+| **Titanium** | energy weapons, reactors, nuclear precision equipment | 100% / factor 0.80 |
+| **TemperedSteel** | industrial machinery (smelters, machining, assembly, factory) | 100% / factor 1 |
+| **Copper** | thermal / heat-exchange (heaters, coolers, radiators) | 100% / factor 1.75 |
 | **StainlessSteel** | food, medical, plumbing bodies | 100% / factor 0.75 |
-| **Lead** | nuclear shielding | 80% / factor 1.25 |
+| **Lead** | nuclear shielding (paired with Titanium) | 50% / factor 1.25 |
 
 Each metal is drawn from the building's `Steel` cost; other costs (Components,
 Plasteel, Silver, Uranium, ...) are left untouched. When several metals draw from
 one Steel cost they split it sequentially, exactly as EMM does on multi-material
-defs like `ShipHeatsink`.
+defs like `ShipHeatsink`. Conventional turrets, civil power plants and heavy
+extraction rigs are **concrete**, not metal - those are handled by the
+[Masonry patch](https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Masonry),
+which follows the same EMM-family conventions.
 
 ## Patched mods
 
-130 buildings across 31 mods. Each mod has its own `IfModActive`-gated folder, so only
+93 buildings across 28 mods. Each mod has its own `IfModActive`-gated folder, so only
 the mods you actually run are touched. Expand for the exact defs and metals:
-
-<details><summary>Combat Extended Armory (24)</summary>
-
-- `CE_Turret_12PounderBombard` - 12-pounder bombard -> Titanium
-- `CE_Turret_GatlingGun` - Gatling gun -> Titanium
-- `CE_Turret_M1919Browning` - M1919 machine gun -> Titanium
-- `CE_Turret_M2HB` - M2 Browning machine gun -> Titanium
-- `CE_Turret_MkNineteenGL` - Mk 19 grenade launcher -> Titanium
-- `CE_Turret_OrganGun` - organ gun -> Titanium
-- `CE_Turret_PKM` - PKM machine gun -> Titanium
-- `CE_Turret_PortableMortar` - 60mm portable mortar -> Titanium
-- `CE_Turret_SPGNine` - SPG-9 recoilless gun -> Titanium
-- `CE_Turret_ShotgunTurret` - shotgun auto-turret -> Titanium
-- `CE_Turret_TwelvePounder` - 12-pounder cannon -> Titanium
-- `CE_Turret_Vickers` - Vickers machine gun -> Titanium
-- `Turret_12PounderBombard` - 12-pounder bombard -> Titanium
-- `Turret_GatlingGun` - Gatling gun -> Titanium
-- `Turret_M1919Browning` - M1919 machine gun -> Titanium
-- `Turret_M2HB` - M2 Browning machine gun -> Titanium
-- `Turret_MkNineteenGL` - Mk 19 grenade launcher -> Titanium
-- `Turret_OrganGun` - organ gun -> Titanium
-- `Turret_PKM` - PKM machine gun -> Titanium
-- `Turret_PortableMortar` - 60mm portable mortar -> Titanium
-- `Turret_SPGNine` - SPG-9 recoilless gun -> Titanium
-- `Turret_ShotgunTurret` - shotgun auto-turret -> Titanium
-- `Turret_TwelvePounder` - 12-pounder cannon -> Titanium
-- `Turret_Vickers` - Vickers machine gun -> Titanium
-
-</details>
 
 <details><summary>Dubs Bad Hygiene (17)</summary>
 
@@ -93,35 +69,6 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 </details>
 
-<details><summary>Alpha Biomes (11)</summary>
-
-- `AB_BoneDistillery` - bone drill -> Titanium
-- `AB_CoreSampleDrill` - core sample drill -> Titanium
-- `AB_MagmaThermalPlant` - magma-thermal generator -> Copper
-- `AB_MagmaThermalPlant_Advanced` - advanced magma-thermal generator -> Copper
-- `AB_PropaneHeater` - propane heater -> Copper
-- `AB_PropaneSmelter` - propane smelter -> Titanium
-- `AB_PropaneStove` - propane stove -> StainlessSteel
-- `AB_PropaneTableMachining` - propane machining table -> Titanium
-- `AB_PropaneTap` - propane tap -> StainlessSteel
-- `AB_SlimeCompressor` - slime compressor -> Titanium
-- `AB_Turret_Propane` - propane turret -> Titanium
-
-</details>
-
-<details><summary>Vanilla Chemfuel Expanded (8)</summary>
-
-- `PS_DeepchemRefinery` - deepchem refinery -> Titanium
-- `VCHE_ChemfuelTap` - chemfuel tap -> StainlessSteel
-- `VCHE_DeepchemDrain` - deepchem drain -> StainlessSteel
-- `VCHE_DeepchemPipe` - deepchem pipe -> StainlessSteel
-- `VCHE_DeepchemPumpjack` - deepchem pumpjack -> Titanium
-- `VCHE_DeepchemTap` - deepchem tap -> StainlessSteel
-- `VCHE_DeepchemValve` - deepchem valve -> StainlessSteel
-- `VCHE_UndergroundDeepchemPipe` - subterranean deepchem pipe -> StainlessSteel
-
-</details>
-
 <details><summary>Vanilla Nutrient Paste Expanded (8)</summary>
 
 - `VNPE_NutrientPasteDripper` - nutrient paste dripper -> StainlessSteel
@@ -135,6 +82,17 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 </details>
 
+<details><summary>Alpha Biomes (6)</summary>
+
+- `AB_PropaneHeater` - propane heater -> Copper
+- `AB_PropaneSmelter` - propane smelter -> TemperedSteel
+- `AB_PropaneStove` - propane stove -> StainlessSteel
+- `AB_PropaneTableMachining` - propane machining table -> TemperedSteel
+- `AB_PropaneTap` - propane tap -> StainlessSteel
+- `AB_SlimeCompressor` - slime compressor -> TemperedSteel
+
+</details>
+
 <details><summary>Dubs Rimatomics (6)</summary>
 
 - `CoolingRadiator` - Radiator -> Copper
@@ -142,17 +100,28 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 - `PPCRailgun` - Punisher -> Titanium
 - `PlutoniumProcessor` - Plutonium Processor -> Lead, Titanium
 - `RadiationShielding` - Reinforced DU Wall -> Lead, Titanium
-- `TableRimatomicsMachining` - Rimatomics machining table -> Titanium
+- `TableRimatomicsMachining` - Rimatomics machining table -> TemperedSteel
+
+</details>
+
+<details><summary>Vanilla Chemfuel Expanded (6)</summary>
+
+- `VCHE_ChemfuelTap` - chemfuel tap -> StainlessSteel
+- `VCHE_DeepchemDrain` - deepchem drain -> StainlessSteel
+- `VCHE_DeepchemPipe` - deepchem pipe -> StainlessSteel
+- `VCHE_DeepchemTap` - deepchem tap -> StainlessSteel
+- `VCHE_DeepchemValve` - deepchem valve -> StainlessSteel
+- `VCHE_UndergroundDeepchemPipe` - subterranean deepchem pipe -> StainlessSteel
 
 </details>
 
 <details><summary>Vanilla Furniture Expanded - Production (6)</summary>
 
-- `VFE_ComponentFabricationBench` - assembly bench -> Titanium
-- `VFE_FueledSmelter` - fueled smelter -> Titanium
+- `VFE_ComponentFabricationBench` - assembly bench -> TemperedSteel
+- `VFE_FueledSmelter` - fueled smelter -> TemperedSteel
 - `VFE_KitchenSinkCabinet` - kitchen sink cabinet -> StainlessSteel
 - `VFE_TableButcherElectric` - electric butcher -> StainlessSteel
-- `VFE_TableMachiningLarge` - large machining table -> Titanium
+- `VFE_TableMachiningLarge` - large machining table -> TemperedSteel
 - `VFE_TableStoveLarge` - large stove -> StainlessSteel
 
 </details>
@@ -164,16 +133,6 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 - `RimFridge_SingleRefrigerator` - Single Refrigerator -> Copper, StainlessSteel
 - `RimFridge_SingleWallRefrigerator` - Wall Single Refrigerator -> Copper, StainlessSteel
 - `RimFridge_WallRefrigerator` - Wall Dual Refrigerator -> Copper, StainlessSteel
-
-</details>
-
-<details><summary>Vanilla Quests Expanded - The Generator (5)</summary>
-
-- `VQE_AncientGeothermalGenetron` - ancient geothermal ARC -> Copper
-- `VQE_Genetron_Geothermal` - geothermal ARC -> Copper
-- `VQE_Genetron_Nuclear` - nuclear ARC -> Copper, Lead, Titanium
-- `VQE_Genetron_SteamPowered` - steam-powered ARC -> Copper, StainlessSteel
-- `VQE_Genetron_ThermalVent` - thermal-vent ARC -> Copper
 
 </details>
 
@@ -197,9 +156,9 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 <details><summary>RimThunder - Core (3)</summary>
 
-- `RTC_EngineHanger` - engine hanger -> Titanium
-- `RT_AssemblyBench` - assembly platfrom -> Titanium
-- `RT_AssemblyCrane` - assembly bridge crane -> Titanium
+- `RTC_EngineHanger` - engine hanger -> TemperedSteel
+- `RT_AssemblyBench` - assembly platfrom -> TemperedSteel
+- `RT_AssemblyCrane` - assembly bridge crane -> TemperedSteel
 
 </details>
 
@@ -261,12 +220,6 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 </details>
 
-<details><summary>Combat Extended Guns (1)</summary>
-
-- `CE_Artillery_Howitzer` - 105mm howitzer -> Titanium
-
-</details>
-
 <details><summary>LWM's Deep Storage (1)</summary>
 
 - `LWM_DS_RimFridge_Refrigerator` - Deep Refrigerator -> Copper, StainlessSteel
@@ -317,7 +270,7 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 <details><summary>Vanilla Quests Expanded - Drone Factory (1)</summary>
 
-- `VFEFactory_DroneAutofactory` - drone autofactory -> Titanium
+- `VFEFactory_DroneAutofactory` - drone autofactory -> TemperedSteel
 
 </details>
 
@@ -358,6 +311,7 @@ Requires [Argonic Core](https://steamcommunity.com/sharedfiles/filedetails/?id=2
 
 <table>
 <tr><th width="300">Mod</th><th width="540">What it does</th></tr>
+<tr><td width="300"><a href="https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Masonry"><img src="Media/Badge_MMMas.png" width="300" alt="Expanded Materials - Masonry: Mod Patches"></a></td><td width="540">The masonry sibling of this patch - extends Expanded Materials - Masonry to support additional mods.</td></tr>
 <tr><td width="300"><a href="https://github.com/eebette/Better-Attack-Orders-for-Simple-Sidearms"><img src="Media/Badge_BAO.png" width="300" alt="Better Attack Orders for Simple Sidearms"></a></td><td width="540">Adds sidearm attack orders to the right-click target menu.</td></tr>
 <tr><td width="300"><a href="https://github.com/eebette/Pawns-Optimize-Weapon-Quality"><img src="Media/Badge_POWQ.png" width="300" alt="Pawns Optimize Weapon Quality"></a></td><td width="540">Pawns will upgrade their held guns when a higher-quality copy is available.</td></tr>
 </table>
