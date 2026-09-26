@@ -1,13 +1,27 @@
 # More Mod Patches for Expanded Materials - Metals
 
-A companion patch for [Expanded Materials - Metals](https://github.com/TheOriginalArgon/Expanded-Materials-Metals)
-(EMM). EMM ships curated `ModPatches` for a set of mods; this extends that same
-treatment to **modded Steel-costing buildings EMM does not cover**, so more of a
-heavy modlist's content is built from EMM's metals instead of plain Steel.
+[![Latest Release](https://img.shields.io/github/v/release/eebette/More-Mod-Patches-for-Expanded-Materials-Metals?label=Latest%20Release)](https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Metals/releases)
+<!-- Steam Workshop badge goes here at publish -->
 
-It uses EMM's own `ArgonicCore.PatchOperations.PatchOperationDistributeCost` with
-EMM's own parameters, so its ops are indistinguishable in form and numbers from
-EMM's hand-written ones.
+![Expanded Materials - Metals: Mod Patches](Media/Badge_MMP.png)
+
+A companion patch for [Expanded Materials - Metals][emm] (EMM). EMM ships curated `ModPatches` for a set of mods; this
+extends that same treatment to **modded Steel-costing buildings EMM does not cover**, so more of a heavy modlist's
+content is built from EMM's metals instead of plain Steel.
+
+[emm]: https://steamcommunity.com/sharedfiles/filedetails/?id=3333419387
+
+## How it works
+
+It reuses EMM's own `ArgonicCore.PatchOperations.PatchOperationDistributeCost` with EMM's own parameters, so its ops are
+indistinguishable in form and numbers from EMM's hand-written ones. Each patched building's `Steel` cost is split into
+one or more of EMM's metals by role:
+
+> a turret, reactor or heavy-machinery frame becomes Titanium; a radiator or heater becomes Copper; a food, medical or
+> plumbing body becomes StainlessSteel; nuclear shielding takes Lead.
+
+Which metal goes where, and how much, is read off EMM's own patches rather than invented - see
+[Methodology](#methodology).
 
 ## What it assigns
 
@@ -322,6 +336,61 @@ material EMM would substitute. Forcing Silicon onto Components also breaks
 mechanically: `RoundToNearest5` has a 5-unit floor, so it would strip a
 building's whole (small) Component count. So they're left out by design.
 
+## Load order
+
+> RimWorld -> Argonic Core -> Expanded Materials - Metals -> this mod.
+
+Requires [Argonic Core](https://steamcommunity.com/sharedfiles/filedetails/?id=2944251509) and
+[Expanded Materials - Metals][emm]; load it **after** EMM.
+
+## My other mods
+
+### The CE + Simple Sidearms suite
+
+<table>
+<tr><th width="300">Module</th><th width="540">What it does</th></tr>
+<tr><td width="300"><a href="https://github.com/eebette/CombatExtended-SimpleSidearms-Compatibility-Patch"><img src="Media/Badge_Patch.png" width="300" alt="CE + Simple Sidearms Compatibility Patch"></a></td><td width="540">Core compatibility patch for Combat Extended and Simple Sidearms.</td></tr>
+<tr><td width="300"><a href="https://github.com/eebette/CombatExtended-SimpleSidearms-Compatibility-Loadouts"><img src="Media/Badge_Loadouts.png" width="300" alt="CE + Simple Sidearms Loadouts Module"></a></td><td width="540">Syncs loadouts between Combat Extended and Simple Sidearms.</td></tr>
+<tr><td width="300"><a href="https://github.com/eebette/CombatExtended-SimpleSidearms-Compatibility-Tactics"><img src="Media/Badge_Tactics.png" width="300" alt="Compatibility Module - Tactics"></a></td><td width="540">Sensible tweaks to nonsense pawn behavior when CE + SS run together.</td></tr>
+</table>
+
+### Standalone
+
+<table>
+<tr><th width="300">Mod</th><th width="540">What it does</th></tr>
+<tr><td width="300"><a href="https://github.com/eebette/Better-Attack-Orders-for-Simple-Sidearms"><img src="Media/Badge_BAO.png" width="300" alt="Better Attack Orders for Simple Sidearms"></a></td><td width="540">Adds sidearm attack orders to the right-click target menu.</td></tr>
+<tr><td width="300"><a href="https://github.com/eebette/Pawns-Optimize-Weapon-Quality"><img src="Media/Badge_POWQ.png" width="300" alt="Pawns Optimize Weapon Quality"></a></td><td width="540">Pawns will upgrade their held guns when a higher-quality copy is available.</td></tr>
+</table>
+
+## FAQ
+
+**CE compatible?**
+
+Yes - it only touches building costs, nothing CE does.
+
+**Can I add or remove it mid-save?**
+
+Yep.
+
+**Does it change balance?**
+
+Slightly, in the same direction EMM already goes: patched buildings cost EMM's metals instead of part of their Steel.
+Wealth stays comparable.
+
+**AI?**
+
+This mod was engineered with the help of an AI Coding Assistant (Claude Code, Fable 5, Max effort). The amount of
+researching and deep-diving the compatibility interfaces of mods that it patches would have been insurmountable without
+it.
+
+Development followed a standard process driven and scrutinized by me (the real human person writing this):
+explore, design, build, test, fix, review, scrutinize, test again over many rounds.
+
+I have manually reviewed and verified all code in this mod.
+
+I ask that if you have unconstructive feedback regarding the usage of AI while developing this mod, that it remains
+outside of this community space. Thank you.
+
 ## Methodology
 
 The metal<->function mapping and the parameters are read off EMM's own patches, not
@@ -361,9 +430,12 @@ To cover another mod, add `ModPatches/1.6/<Mod>/Patches/<Mod>_Patch_Buildings.xm
 `LoadFolders.xml`. `tools/assignments.tsv` and `tools/adversary-review.md` record
 which building got which metal, and why.
 
-## Requires
+## Credit
 
-- [Argonic Core](https://steamcommunity.com/sharedfiles/filedetails/?id=2944251509)
-- [Expanded Materials - Metals](https://github.com/TheOriginalArgon/Expanded-Materials-Metals)
+All the material-to-role conventions and parameters here are [Argon's][emm], inferred from EMM's own patches and
+extended to content they could not have covered. Bugs in the extension are mine.
 
-Load **after** Expanded Materials - Metals.
+## License
+
+[MIT](LICENSE) - code, docs, and the badge artwork (the ingot and stone-block emblems are original; nothing here derives
+from Combat Extended's art).
