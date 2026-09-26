@@ -307,11 +307,17 @@ Requires [Argonic Core](https://steamcommunity.com/sharedfiles/filedetails/?id=2
 <tr><td width="300"><a href="https://github.com/eebette/CombatExtended-SimpleSidearms-Compatibility-Tactics"><img src="Media/Badge_Tactics.png" width="300" alt="Compatibility Module - Tactics"></a></td><td width="540">Sensible tweaks to nonsense pawn behavior when CE + SS run together.</td></tr>
 </table>
 
-### Standalone
+### Expanded Materials patches
 
 <table>
 <tr><th width="300">Mod</th><th width="540">What it does</th></tr>
 <tr><td width="300"><a href="https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Masonry"><img src="Media/Badge_MMMas.png" width="300" alt="Expanded Materials - Masonry: Mod Patches"></a></td><td width="540">The masonry sibling of this patch - extends Expanded Materials - Masonry to support additional mods.</td></tr>
+</table>
+
+### Standalone
+
+<table>
+<tr><th width="300">Mod</th><th width="540">What it does</th></tr>
 <tr><td width="300"><a href="https://github.com/eebette/Better-Attack-Orders-for-Simple-Sidearms"><img src="Media/Badge_BAO.png" width="300" alt="Better Attack Orders for Simple Sidearms"></a></td><td width="540">Adds sidearm attack orders to the right-click target menu.</td></tr>
 <tr><td width="300"><a href="https://github.com/eebette/Pawns-Optimize-Weapon-Quality"><img src="Media/Badge_POWQ.png" width="300" alt="Pawns Optimize Weapon Quality"></a></td><td width="540">Pawns will upgrade their held guns when a higher-quality copy is available.</td></tr>
 </table>
