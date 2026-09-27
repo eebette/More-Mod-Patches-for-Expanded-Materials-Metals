@@ -44,7 +44,7 @@ which follows the same EMM-family conventions.
 
 ## Patched mods
 
-93 buildings across 28 mods. Each mod has its own `IfModActive`-gated folder, so only
+89 buildings across 27 mods. Each mod has its own `IfModActive`-gated folder, so only
 the mods you actually run are touched. Expand for the exact defs and metals:
 
 <details><summary>Dubs Bad Hygiene (17)</summary>
@@ -136,12 +136,10 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 </details>
 
-<details><summary>Expanded Prosthetics and Organ Engineering - Forked (4)</summary>
+<details><summary>Expanded Prosthetics and Organ Engineering - Forked (2)</summary>
 
-- `TableBasicProsthetic` - basic prosthetics workbench -> StainlessSteel
 - `TableBionics` - bionics workbench -> StainlessSteel
 - `TableOrgans` - tissue printer -> StainlessSteel
-- `TableSimpleProsthetic` - prosthetic workbench -> StainlessSteel
 
 </details>
 
@@ -178,10 +176,9 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 
 </details>
 
-<details><summary>Alpha Animals (2)</summary>
+<details><summary>Alpha Animals (1)</summary>
 
 - `AA_HexagelCoreReactor` - hexagel core reactor -> Titanium
-- `VEF_AdvancedAnimalImplantsTable` - advanced animal prosthetics table -> StainlessSteel
 
 </details>
 
@@ -253,12 +250,6 @@ the mods you actually run are touched. Expand for the exact defs and metals:
 <details><summary>Vanilla Factions Expanded - Settlers (1)</summary>
 
 - `ChemBoiler` - chemboiler -> Copper
-
-</details>
-
-<details><summary>Vanilla Furniture Expanded (1)</summary>
-
-- `AirConditioningUnit` - air conditioning unit -> Copper
 
 </details>
 

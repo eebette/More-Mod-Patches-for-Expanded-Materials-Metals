@@ -2,12 +2,6 @@
 <!-- Alpha Animals: EMM material coverage. -->
 <Patch>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
-    <xpath>/Defs/ThingDef[defName="VEF_AdvancedAnimalImplantsTable"]/costList/Steel</xpath>
-    <newMaterial>EM_StainlessSteel</newMaterial>
-    <percentage>100</percentage>
-    <extraCostFactor>0.75</extraCostFactor>
-  </Operation>
-  <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
     <xpath>/Defs/ThingDef[defName="AA_HexagelCoreReactor"]/costList/Steel</xpath>
     <newMaterial>EM_Titanium</newMaterial>
     <percentage>100</percentage>

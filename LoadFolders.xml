@@ -22,7 +22,6 @@
     <li IfModActive="VanillaExpanded.VCookEStews">ModPatches/1.6/VanillaCookingExpandedStews</li>
     <li IfModActive="VanillaExpanded.VCookESushi">ModPatches/1.6/VanillaCookingExpandedSushi</li>
     <li IfModActive="OskarPotocki.VanillaFactionsExpanded.SettlersModule">ModPatches/1.6/VanillaFactionsExpandedSettlers</li>
-    <li IfModActive="VanillaExpanded.VFECore">ModPatches/1.6/VanillaFurnitureExpanded</li>
     <li IfModActive="VanillaExpanded.VFEMedical">ModPatches/1.6/VanillaFurnitureExpandedMedicalModule</li>
     <li IfModActive="VanillaExpanded.VFEProduction">ModPatches/1.6/VanillaFurnitureExpandedProduction</li>
     <li IfModActive="VanillaExpanded.VGeneticsE">ModPatches/1.6/VanillaGeneticsExpanded</li>

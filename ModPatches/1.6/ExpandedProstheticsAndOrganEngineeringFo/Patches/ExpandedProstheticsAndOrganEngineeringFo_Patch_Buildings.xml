@@ -2,7 +2,7 @@
 <!-- Expanded Prosthetics and Organ Engineering - Forked: EMM material coverage. -->
 <Patch>
   <Operation Class="ArgonicCore.PatchOperations.PatchOperationDistributeCost">
-    <xpath>/Defs/ThingDef[defName="TableBasicProsthetic" or defName="TableBionics" or defName="TableOrgans" or defName="TableSimpleProsthetic"]/costList/Steel</xpath>
+    <xpath>/Defs/ThingDef[defName="TableBionics" or defName="TableOrgans"]/costList/Steel</xpath>
     <newMaterial>EM_StainlessSteel</newMaterial>
     <percentage>100</percentage>
     <extraCostFactor>0.75</extraCostFactor>
