@@ -26,6 +26,7 @@ Load after Expanded Materials - Metals.</description>
     <li>
       <packageId>Argon.ExpandedMaterials.Metals</packageId>
       <displayName>Expanded Materials - Metals</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3333419387</steamWorkshopUrl>
     </li>
   </modDependencies>
   <loadAfter>
