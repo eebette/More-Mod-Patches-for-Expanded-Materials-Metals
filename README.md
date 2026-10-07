@@ -5,28 +5,12 @@
 
 ![Expanded Materials - Metals: Mod Patches](Media/Badge_MMP.png)
 
-A companion patch for [Expanded Materials - Metals][emm] (EMM). EMM ships curated `ModPatches` that split a building's
-Steel into its **metals** by role; this extends that same treatment to **modded Steel-costing buildings EMM does not
-cover**, so more of a heavy modlist's reactors, machinery, radiators and kitchens are built from EMM's metals instead of
-pure Steel.
+A bunch of unofficial mod patches for [Expanded Materials - Metals][emm]. I did my best to match that author's
+conventions.
 
 [emm]: https://steamcommunity.com/sharedfiles/filedetails/?id=3333419387
 
-## How it works
-
-It reuses EMM's own `ArgonicCore.PatchOperations.PatchOperationDistributeCost` with EMM's own parameters - **each
-patched building's `Steel` cost is split into one or more of EMM's metals by role** - so its ops are indistinguishable
-in form and numbers from EMM's hand-written ones. A building gets a metal when the author would build it from that metal:
-
-> a reactor or energy weapon becomes Titanium; industrial machinery becomes TemperedSteel; a radiator or heater becomes
-> Copper; a food, medical or plumbing body becomes StainlessSteel; nuclear shielding takes Lead. Conventional turrets,
-> civil power plants and heavy extraction rigs are concrete instead (that is the
-> [Masonry patch](https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Masonry)'s job).
-
-Which metal goes where, and how much, is read off EMM's own patches - see [Methodology](#methodology) - and audited by
-an independent adversarial pass.
-
-## What it covers
+## Coverage
 
 | Metal | Goes on | EMM param |
 |---|---|---|
@@ -36,16 +20,7 @@ an independent adversarial pass.
 | **StainlessSteel** | food, medical, plumbing bodies | 100% / factor 0.75 |
 | **Lead** | nuclear shielding (paired with Titanium) | 50% / factor 1.25 |
 
-Only the building's `Steel` is drawn from; other costs (Components, Plasteel, Silver, Uranium, ...) are left untouched.
-When several metals draw from one Steel cost they split it sequentially, exactly as EMM does on multi-material defs like
-`ShipHeatsink`. On the factory machine that also gets concrete, cement takes its 25% of the original Steel first and
-this patch then takes its TemperedSteel share of the remainder - the author's order (Expanded Materials - Masonry
-declares `loadBefore` Expanded Materials - Metals, and the two share 19 buildings that are split exactly this way).
-
-## Covered buildings
-
-89 buildings across 27 mods. Each mod has its own `IfModActive`-gated folder, so only the mods you actually run are
-touched. Expand for the exact defs and metals:
+89 buildings across 27 mods:
 
 <details><summary>Dubs Bad Hygiene (17)</summary>
 
@@ -271,18 +246,6 @@ touched. Expand for the exact defs and metals:
 
 </details>
 
-`PS_DeepchemRefinery` and `VCHE_DeepchemPumpjack` get no metal here: **EMMas already cements them itself**, and drawing
-Steel for metal as well would starve the author's cement.
-
-## Why Silicon / Germanium are omitted
-
-EMM sources Silicon and Germanium **only from Gold** - its stand-in for a
-high-tech electronics cost. The modded electronics here don't cost Gold; they
-cost **Components**, which are *functional parts* (a microchip), not a raw
-material EMM would substitute. Forcing Silicon onto Components also breaks
-mechanically: `RoundToNearest5` has a 5-unit floor, so it would strip a
-building's whole (small) Component count. So they're left out by design.
-
 ## Load order
 
 > RimWorld -> Argonic Core -> Masonry mod patches -> Expanded Materials - Metals -> this mod.
@@ -290,9 +253,7 @@ building's whole (small) Component count. So they're left out by design.
 Requires [Argonic Core](https://steamcommunity.com/sharedfiles/filedetails/?id=2944251509) and
 [Expanded Materials - Metals][emm]; load it **after** EMM and **after**
 [More Mod Patches for Expanded Materials - Masonry](https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Masonry)
-if you run it - the same order the author uses for the two base mods, so cement is drawn first and metal takes its
-share of the remainder. (Running Combat Extended? Load the whole Expanded Materials stack after CE, or CE's later
-`costList` rewrites discard the cement on the vanilla turrets EMMas itself patches.)
+(if you run it).
 
 ## My other mods
 
@@ -309,7 +270,7 @@ share of the remainder. (Running Combat Extended? Load the whole Expanded Materi
 
 <table>
 <tr><th width="300">Mod</th><th width="540">What it does</th></tr>
-<tr><td width="300"><a href="https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Masonry"><img src="Media/Badge_MMMas.png" width="300" alt="Expanded Materials - Masonry: Mod Patches"></a></td><td width="540">The masonry sibling of this patch - extends Expanded Materials - Masonry to support additional mods.</td></tr>
+<tr><td width="300"><a href="https://github.com/eebette/More-Mod-Patches-for-Expanded-Materials-Masonry"><img src="Media/Badge_MMMas.png" width="300" alt="Expanded Materials - Masonry: Mod Patches"></a></td><td width="540">Extends Expanded Materials - Masonry to support additional mods.</td></tr>
 </table>
 
 ### Standalone
@@ -324,7 +285,7 @@ share of the remainder. (Running Combat Extended? Load the whole Expanded Materi
 
 **CE compatible?**
 
-Yes - it only touches building costs, nothing CE does.
+Yes. **Load CE after this.**
 
 **Can I add or remove it mid-save?**
 
@@ -332,8 +293,7 @@ Yep.
 
 **Does it change balance?**
 
-Slightly, in the same direction EMM already goes: covered buildings cost EMM's metals instead of part of their Steel.
-Wealth stays comparable.
+Not really. 
 
 **AI?**
 
@@ -349,37 +309,10 @@ I have manually reviewed and verified all code in this mod.
 I ask that if you have unconstructive feedback regarding the usage of AI while developing this mod, that it remains
 outside of this community space. Thank you.
 
-## Methodology
-
-Which metal goes on which building, and how much, follows EMM's own patches, not a rule invented here:
-
-- **Which metal, which building** follows EMM's material->role conventions, audited by an independent adversarial
-  review pass (`tools/adversary-review.md`, against the brief in `tools/adversary-brief.md`). That pass removed false
-  matches (decorative props, "industrial"-in-name storage, air-movers mislabelled as heat exchangers, salvage
-  chunks/husks) and re-typed several rows.
-- **Which base cost, per metal** respects the tier EMM sources each metal from, or above (Steel for
-  structural/thermal/shielding; StainlessSteel from Steel is within EMM's range - it uses Steel on the prosthetic base).
-- **Percentages and `extraCostFactor`** are EMM's Steel-base medians. The factors are a *mining-effort* balance:
-  Copper's 1.75 tracks copper ore's ~2x per-cell yield vs Steel/Iron, so a copper building costs roughly the same number
-  of cells mined as the Steel original despite the larger unit count. Nothing here uses an invented number.
-
-## Structure
-
-Laid out like EMM's own `ModPatches/` - one folder per patched mod under `ModPatches/1.6/<Mod>/Patches/`, each gated in
-`LoadFolders.xml` by `IfModActive="<packageId>"`. Each folder's patch file has a **unique** name
-(`<Mod>_Patch_Buildings.xml`, the way EMM names every file): RimWorld's `LoadFolders` overrides files by relative path,
-so a shared filename across folders would collapse to one and silently shadow the rest.
-
-To cover another mod, add `ModPatches/1.6/<Mod>/Patches/<Mod>_Patch_Buildings.xml` and one `IfModActive="<packageId>"`
-line in `LoadFolders.xml`. `tools/assignments.tsv` and `tools/adversary-review.md` record which building got which
-metal, and why.
-
 ## Credit
 
-All the material-to-role conventions and parameters here are [Argon's][emm], inferred from EMM's own patches and
-extended to content they could not have covered. Bugs in the extension are mine.
+[Argon][emm], for some really awesome mods.
 
 ## License
 
-[MIT](LICENSE) - code, docs, and the badge artwork (the ingot and stone-block emblems are original; nothing here derives
-from Combat Extended's art).
+[MIT](LICENSE)
