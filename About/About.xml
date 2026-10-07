@@ -6,17 +6,9 @@
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
-  <description>Extends the material treatment of Expanded Materials - Metals (EMM) to modded Steel-costing buildings that EMM's own ModPatches do not cover.
+  <description>More mod patches for Expanded Materials - Metals. 
 
-Using EMM's own ArgonicCore PatchOperationDistributeCost with EMM's Steel-base parameters, it assigns:
-- Titanium to structural / heavy-machinery / turret frames
-- Copper to thermal / heat-exchange equipment
-- StainlessSteel to food / medical / plumbing bodies
-- Lead to nuclear shielding
-
-Assignments are derived from EMM's own metal->function conventions, audited by an independent adversarial pass. Silicon/Germanium are intentionally omitted: EMM uses them only as Gold substitutes, and the modded electronics here carry Components, not Gold.
-
-Load after Expanded Materials - Metals.</description>
+I did my best to make it consistent with existing mod patches written by the original author.</description>
   <modDependencies>
     <li>
       <packageId>Argon.CoreLib</packageId>
@@ -31,5 +23,7 @@ Load after Expanded Materials - Metals.</description>
   </modDependencies>
   <loadAfter>
     <li>Argon.ExpandedMaterials.Metals</li>
+    <li>CETeam.CombatExtended</li>
+    <li>eebette.MoreModPatchesForExpandedMaterialsMasonry</li>
   </loadAfter>
 </ModMetaData>

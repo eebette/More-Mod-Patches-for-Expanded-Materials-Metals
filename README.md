@@ -285,7 +285,7 @@ Requires [Argonic Core](https://steamcommunity.com/sharedfiles/filedetails/?id=2
 
 **CE compatible?**
 
-Yes. **Load CE after this.**
+Yes. **Load this after CE.**
 
 **Can I add or remove it mid-save?**
 
